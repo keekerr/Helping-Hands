@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./jass.css" />
+  <link rel="stylesheet" href="./signup.css" />
+  <title>Helping Hands</title>
+</head>
+<body class="row">
+    <div class="col-md-9">
+      <h1>Login</h1>
+  
+      <form class="form login-form">
+        <div class="form-group">
+          <label for="email-login">email:</label>
+          <input class="form-input" type="text" id="email-login" placeholder="email@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="password-login">password:</label>
+          <input class="form-input" type="password" id="password-login" placeholder="password" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">login</button>
+        </div>
+        <div>
+          <!--button takes to signup page-->
+          <h2>Sign up to help!!</h2>
+          <button class= "signup_btn" type="submit">Join us! Sign up here!</button>
+        </div>
+      </form>
+    </div>
+    
+  <!--.................................................................--->
+  
+    <div class="flex-column justify-space-around">
+      <header class="display-flex justify-space-between align-center p-2">
+        <nav>
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+          <button class="no-button" id="logout">logout</button>
+          {{else}}
+          <a href="/login">login</a>
+          {{/if}}
+        </nav>
+      </header>
+      <main class="container container-fluid mt-5">
+        <!-- Render the sub layout -->
+        {{{ body }}}
+      </main>
+      <footer>
+        
+      </footer>
+    </div>
+</body>
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+  
+  <script src="./js/login.js"></script>
