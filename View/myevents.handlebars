@@ -1,9 +1,13 @@
 <!--enter html-->
 
 {{#each my-event as |myevents|}}
+<!-- my-event = model -->
 {{> my-event}}
+<!-- calls partial html -->
 {{/each}}
 
 {{#each volunteer-event as |myvolunteering|}}
-{{> gallery-details}}
+{{> volunteer-event}}
 {{/each}}
+
+<!--button with a tag to w/e handlebars is attached to it-->
