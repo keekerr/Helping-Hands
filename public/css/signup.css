@@ -4,3 +4,12 @@ body {
 h2 {
     color: rgb(97, 69, 210);
 }
+#email-login{
+    width: 258px;
+}
+#password-login{
+    width: 229px;
+}
+img{
+    background-image: url(/public/hands.png);
+}

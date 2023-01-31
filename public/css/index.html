@@ -13,8 +13,8 @@
     <div class="col-md-9">
       <h1>Login</h1>
   
-      <form class="form login-form">
-        <div class="form-group">
+      <img class="form login-form">
+        <div class="form-group pd-5">
           <label for="email-login">email:</label>
           <input class="form-input" type="text" id="email-login" placeholder="email@email.com" />
         </div>
@@ -27,37 +27,12 @@
         </div>
         <div>
           <!--button takes to signup page-->
-          <h2>Sign up to help!!</h2>
+          <h2 class="pt-5">Sign up to help!!</h2>
           <button class= "signup_btn" type="submit">Join us! Sign up here!</button>
         </div>
+        <img class="img">
+      </img>
       </form>
     </div>
     
-  <!--.................................................................--->
-  
-    <div class="flex-column justify-space-around">
-      <header class="display-flex justify-space-between align-center p-2">
-        <nav>
-          <!-- Conditionally render login or logout links -->
-          {{#if logged_in}}
-          <button class="no-button" id="logout">logout</button>
-          {{else}}
-          <a href="/login">login</a>
-          {{/if}}
-        </nav>
-      </header>
-      <main class="container container-fluid mt-5">
-        <!-- Render the sub layout -->
-        {{{ body }}}
-      </main>
-      <footer>
-        
-      </footer>
-    </div>
-</body>
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-    <script src="/js/logout.js"></script>
-    {{/if}}
-  
-  <script src="./js/login.js"></script>
+ 
