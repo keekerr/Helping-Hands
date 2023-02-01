@@ -12,8 +12,12 @@ class User extends Model {
 }
 
 User.init({
-    // add code to make id automatically populate
-    id:{},
+    // Automatically Increments to each User ID (remember to add informaiton for keys)
+    id:{
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+    },
     first_name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -39,27 +43,80 @@ User.init({
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-        len: [8],
+        len: [12],
       },
     },
-    location_state:{
+      location_state:{
         // needs to be a drop down/select from a list (research)
+        type: DataTypes.ENUM,
+        values: [
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "DC",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VI",
+            "VA",
+            "WA",
+            "WV",
+            "WI",
+            "WY"],
+            allowNull: false,
+            // missing code for validation?
     },
     location_zipcode:{
         type:DataTypes.INTEGER,
         allowNull: false,
     },
+    // conditional statement to prevent duplicate user accounts
 
-
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user',
 }
-    // {           *** This needs to be randomly assigned
-   
-    // }
-
-    // Need all login info needed (see chart )
-
-    // After adding all information needed for the user login, need to create a funciton to check logs to see if account already exists
-
-)
+);
 
 module.exports = User;

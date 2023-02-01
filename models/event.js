@@ -13,7 +13,7 @@ Event.init({
 
     },
     event_type:{
-
+        // see chat code
     },
     vol_num:{
 
