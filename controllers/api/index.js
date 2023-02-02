@@ -1,11 +1,12 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const userRoutes = require('./myEventsRoutes');
-const userRoutes = require('./volunteerRoutes');
+
+const eventRoutes = require('./myEventsRoutes');
+const volunteerRoutes = require('./volunteerRoutes');
 
 router.use('/users', userRoutes);
 // figure out the proper paths!!
-router.use('/myEvents', userRoutes);
-router.use('/volunteerRoutes', userRoutes);
+router.use('/myEvents', eventRoutes);
+router.use('/volunteerRoutes', volunteerRoutes);
 
 module.exports = router;
