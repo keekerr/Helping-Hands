@@ -33,6 +33,10 @@ Event.init({
     vol_num:{
         type: DataTypes.INTEGER,
         allowNull:false,
+        Validate: {
+        min: 1,
+        max: 12
+        }
     },
     event_address:{
         type: DataTypes.STRING,
