@@ -1,8 +1,11 @@
 <!--enter html-->
-
+<button type="button" class="my_event_btn">my events</button>
+<button type="button" class="logout_btn">logout</button>
+<div id="allEventsContainer">
 {{#each event as |event|}}
 {{>all-event-details}}
 {{/each}}
+</div>
 
 <!-- button with href as path with "homeroute"
 conneted by controller-->
