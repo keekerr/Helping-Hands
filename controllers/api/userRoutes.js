@@ -36,6 +36,62 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
+// Creates a new user
+
+router.post('/', async (req, res) => {
+
+  try {
+    const userData = await User.create({
+      firstName: req.body.first_name,
+      lastName: req.body.last_name,
+      birthDate: req.body.birth_date,
+      email: req.body.email,
+      password: req.body.password,
+    });
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+// Get one user
+
+router.get('/', async (req, res) => {
+
+  try {
+    const userData = await User.findByPk(req.params.id);
+    if (!userData) {
+      res.status(404).json({ message: 'No user with this id!' });
+      return;
+    }
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// DELETE a user
+router.delete('/user:id', async (req, res) => {
+  try {
+    const userData = await User.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!userData) {
+      res.status(404).json({ message: 'No user with this id!' });
+      //next()?? to homepage
+      return;
+    }
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     // Remove the session variables

@@ -1,10 +1,7 @@
-// empty model to be filled in
-// check this block of code
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-// const sequelize = require('..') **Config
+const sequelize = require (config);
 
-// Check this block of code (this is for password login)
 class User extends Model {
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
@@ -12,11 +9,16 @@ class User extends Model {
 }
 
 User.init({
-    // Automatically Increments to each User ID (remember to add informaiton for keys)
     id:{
         type: DataTypes.INTEGER,
         allowNull: false,
         autoIncrement: true,
+    },
+    volunteerEvent_id:{
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
     },
     first_name: {
         type: DataTypes.STRING,
@@ -27,7 +29,6 @@ User.init({
         allowNull: false,
     },
     birth_date:{
-        // Check that this is the correct data type
         type:DataTypes.DATE,
         allowNull: false,
     },
@@ -47,7 +48,6 @@ User.init({
       },
     },
       location_state:{
-        // needs to be a drop down/select from a list (research)
         type: DataTypes.ENUM,
         values: [
             "AL",
@@ -103,20 +103,28 @@ User.init({
             "WI",
             "WY"],
             allowNull: false,
-            // missing code for validation?
     },
     location_zipcode:{
         type:DataTypes.INTEGER,
         allowNull: false,
     },
-    // conditional statement to prevent duplicate user accounts
+   
+    hooks: {
+        beforeCreate: async (newUserData) => {
+          newUserData.password = await bcrypt.hash(newUserData.password, 10);
+          return newUserData;
+        },
+        beforeUpdate: async (updatedUserData) => {
+          updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+          return updatedUserData;
+        },
+      },
 
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
-}
-);
+});
 
 module.exports = User;
