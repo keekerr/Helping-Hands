@@ -1,13 +1,12 @@
 <section class="eventcard"> 
         <div class="vol_event_card">  
-    <header class="pg_topper"> volunteer events:</header>
+    <header class="pg_topper"> volunteer events:</header> 
        <div class="event_header">
-        <p>
-            {{volunteerevent.name}}
-        </p>
+        <p>{{volunteer.event.event_name}} on {{ format_date volunteer.event.event_date}} is a {{volunteer.event.event_type}} event</p>
     </div>
     <div class="event_description">
-        <p> {{volunteerevent.description}} </p>
+        <p> {{volunteer.event_description}} </p>
+        <p> {{volunteer.event.event_address}}, {{volunteer.event.event_state}} {{volunteer.event_zip}} </p>
     </div>
         </div>
 
