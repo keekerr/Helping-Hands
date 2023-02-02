@@ -3,14 +3,16 @@
 <button type="button" id="allEventsBtn" class="all_events">all events</button>
 <button type="button" class="logout_btn">logout</button>
 
-{{#each my-event as |myevents|}}
-<!-- my-event = model -->
-{{> my-event}}
-<!-- calls partial html -->
+{{#each events as |event|}}
+  {{#if (eq event.user_id user.id)}}
+    {{> my-event}}
+  {{/if}}
 {{/each}}
 
-{{#each volunteer-event as |myvolunteering|}}
-{{> volunteer-event}}
+{{#each events as |event|}}
+  {{#if (eq event.user.volunteerEvent_id user.volunteerEvent_id)}}
+    {{>volevent}}
+  {{/if}}
 {{/each}}
 
 <!--button with a tag to w/e handlebars is attached to it-->
