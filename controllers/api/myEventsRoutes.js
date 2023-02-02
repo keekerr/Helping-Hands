@@ -6,6 +6,7 @@ const { User } = require('../../models');
 // Create routes that get events by category
 
 // Get Route for events
+
 router.get('/', async (req, res) => {
   try {
     // Get all  My events          //or findAll?? then filter with where?? 
@@ -94,3 +95,5 @@ router.post('/modal???', async (req, res) => {
 // });
 
 module.exports = router;
+
+    
