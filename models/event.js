@@ -1,4 +1,3 @@
-// Check this block of code
 const  { Model, DataTypes } = require('sequelize');
 const sequelize = require (config);
 
@@ -9,12 +8,17 @@ Event.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-
     id:{
         type: DataTypes.INTEGER,
         allowNull: false, 
         primaryKey: true,
         autoIncrement: true,
+    },
+    volunteered_id:{
+        type: DataTypes.INTEGER,
+        allowNull: false, 
+        autoIncrement: true,
+        primaryKey: true,
     },
     event_type:{
         type: DataTypes.ENUM,
@@ -30,7 +34,7 @@ Event.init({
             notContains: " ",
           },
     },
-    vol_num:{
+    number_needed:{
         type: DataTypes.INTEGER,
         allowNull:false,
         Validate: {
@@ -102,7 +106,6 @@ Event.init({
             "WY"],
             allowNull: false,
     },
-
     event_zip:{
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -134,17 +137,10 @@ Event.init({
         },
     },
 
-},
-{
     sequelize,
     freezeTableName: true,
     underscored: true,
     modelName: 'event',
-  }
-    //  evet ID needs to be randomly generated
-    // include all of the appropriate information for this table (see chart)
-    // id:{}
-        
-);
+});
 
 module.exports = Event;
