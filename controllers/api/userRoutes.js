@@ -38,7 +38,8 @@ router.post('/login', async (req, res) => {
 
 
 // Creates a new user
-router.post('/', async (req, res) => {
+// Find out how to route to and from modal
+router.post('/login/modal??', async (req, res) => {
   try {
     const userData = await User.create({
       firstName: req.body.first_name,
@@ -54,7 +55,7 @@ router.post('/', async (req, res) => {
 });
 
 // Get one user
-router.get('/user:id', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id);
     if (!userData) {
