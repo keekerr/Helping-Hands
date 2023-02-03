@@ -1,13 +1,15 @@
 // Check this block of code
 const  { Model, DataTypes } = require('sequelize');
-// const sequelize = require (config)
+const sequelize = require ('../config/connection')
 
 class Volunteer extends Model {}
 
-Volunteer.init({
+Volunteer.init(
+    {
     // this is coming from the user ID, Foreign Key?)
     id:{
         type: DataTypes.INTEGER,
+        primaryKey: true,
         allowNull: false,
         autoIncrement: true,
     },
@@ -15,7 +17,7 @@ Volunteer.init({
     event_id:{
         type: DataTypes.INTEGER,
         allowNull: false,
-        autoIncrement: true, 
+        //autoIncrement: true, 
     },  
     //Can this be a foreign key? if not date needs to change  
     volunteer_type:{
@@ -32,19 +34,19 @@ Volunteer.init({
         allowNull: false,
         defaultValue: DataTypes.NOW,
     },
-    volunteer_status:{
-        type: DataTypes.BIT,
-        // change to an ENUM?
-    },
+    // volunteer_status:{
+    //     type: DataTypes.BIT,
+    //     // change to an ENUM?
+    // },
 
     //  conditional statement to check if they have volunnteered for that event already
+},    
 
-    sequelize,
+    {sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',  
-}    
+    modelName: 'user'  }
 );
 
 module.exports = Volunteer;

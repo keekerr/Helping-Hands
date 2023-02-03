@@ -2,7 +2,7 @@
 // check this block of code
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-// const sequelize = require('..') **Config
+const sequelize = require('../config/connection') //**Config
 
 // Check this block of code (this is for password login)
 class User extends Model {
@@ -16,6 +16,7 @@ User.init({
     id:{
         type: DataTypes.INTEGER,
         allowNull: false,
+        primaryKey: true,
         autoIncrement: true,
     },
     first_name: {
@@ -111,12 +112,12 @@ User.init({
     },
     // conditional statement to prevent duplicate user accounts
 
-    sequelize,
+},
+    {sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
-}
+    modelName: 'user'}
 );
 
 module.exports = User;

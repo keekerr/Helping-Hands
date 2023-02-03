@@ -1,46 +1,49 @@
-const router = require('express').Router();
-const { User } = require('../../models');
+const router = require("express").Router();
+const { Event } = require("../../models");
 
 // create routes to all events page
 
-
 // get all route by sort category
-router.get ('/all-event-details', async (req, res) => {
-    try {
+router.get("/details", async (req, res) => {
+  try {
     // Get all events
     const allEventData = await Event.findAll({
-        model: Event ,
-        attributes: ['id', 'name', 'description', 'category', 'volunteersNeed', 'volunteersSignedUp' ],
-        order: [['name', 'ASC']],
+      model: Event,
+      attributes: [
+        "id",
+        "name",
+        "description",
+        "category",
+        "volunteersNeed",
+        "volunteersSignedUp",
+      ],
+      order: [["name", "ASC"]],
       // where clause for category
-        where: {
-        category: req.params.category
-    
-        }
-        
+      where: {
+        category: req.params.category,
+      },
     });
-    
- const events = allEventData.map((event) =>{ 
-        event.get({ plain: true })
-        //TODO: Calculate the percentage and store it in progressPercentage
-        const progressPercentage = event.volunteersNeed / event.volunteersSignedUp * 100
 
-        return { events, progressPercentage }
+    const events = allEventData.map((event) => {
+      event.get({ plain: true });
+      //TODO: Calculate the percentage and store it in progressPercentage
+      //const progressPercentage = event.volunteersNeed / event.volunteersSignedUp * 100
+
+      return { ...events, progressPercentage };
     });
 
     // Pass serialized data into Handlebars.js template
-    res.render('all-event', { myevent });
+    res.render("all-event-details", { events });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Should we do a GET for single events?? then show modal??? 
-
+// Should we do a GET for single events?? then show modal???
 
 // router.get('/modal???', async (req, res) => {
 //   try {
-//     // Get all  My events          //or findAll?? then filter with where?? 
+//     // Get all  My events          //or findAll?? then filter with where??
 //     const eventData = await Event.findByPK(req.params.user_id, {
 //       model: Event ,
 //       attributes: ['id', 'name', 'category', 'volunteersNeed', 'volunteersSignedUp' ],
@@ -49,11 +52,11 @@ router.get ('/all-event-details', async (req, res) => {
 //       where: {
 //         user_id: req.params.user_id
 //       }
-      
+
 //     });
 
 //      // Serialize user data so templates can read it
-//     const events = eventData.map((event) =>{ 
+//     const events = eventData.map((event) =>{
 //         event.get({ plain: true })
 //         //TODO: Calculate the percentage and store it in progressPercentage
 //         const progressPercentage = event.volunteersNeed / event.volunteersSignedUp * 100
@@ -67,4 +70,6 @@ router.get ('/all-event-details', async (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
-// Delete if there is time 
+// Delete if there is time
+
+module.exports = router;
