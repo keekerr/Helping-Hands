@@ -1,15 +1,13 @@
 <!--enter html-->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Helping Hands</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
+<button type="button" class="logout_btn">logout</button>
+<div id="allEventsContainer">
 {{#each event as |event|}}
 {{>all-event-details}}
 {{/each}}
+</div>
+
+<!-- button with href as path with "home route"
+connected by controller-->
+<button type="button" id="myEventsBtn" class="my_event_btn">
+<a href="./my-event.handlebars">my events</a>
+</button>

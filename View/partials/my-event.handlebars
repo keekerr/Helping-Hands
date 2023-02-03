@@ -1,15 +1,26 @@
-<section> 
-    <header class="pg_topper"> my events:</header>
+<section class = "eventcard"> 
+    <header class="pg_topper"> my events</header>
        
        <div class="my_event_card">  
         <div class="event_header">
-        <p>
-            {{myevent.name}}
-        </p>
+        <p> {{user.event.event_name}} on {{format_date user.event.event_date}} </p>
     </div>
     <div class="event_description">
-        <p> {{myevent.description}} </p>
+        <p> {{user.event.event_description}} </p>
+    </div>
+    <div class="attendingVolunteers">
+        <p> there are {{BLANK}} volunteers out of {{user.event.vol_num}} requested </p>
     </div>
         </div>
 
     </section>
+
+    <!--
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+  <div class="card-header">{{myevent.name}}</div>
+  <div class="card-body">
+    <h5 class="card-title">{{user.name}}</h5>
+    <p class="card-text">{{myevent.description}}</p>
+  </div>
+</div>
+-->
