@@ -22,7 +22,13 @@ Event.init({
   },
   event_type: {
     type: DataTypes.ENUM,
-    values: ["Yard Work", "Moving", "Animal Care", "Babysitting"],
+    values: [
+      "Yard Work",
+      "Moving",
+      "Emotional Support",
+      "Animal Care",
+      "Babysitting",
+    ],
     allowNull: false,
     validate: {
       isAlpha: true,
