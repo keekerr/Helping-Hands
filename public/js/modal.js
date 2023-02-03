@@ -54,9 +54,9 @@ var userModal = document.getElementById("acctModal");
 var userCloseModal = getElementById("userclose");
 
 //displays new user modal when clicked
-userModalBtn.onclick = function () {
+userModalBtn.addEventListener("click", function () {
     userModal.style.display = "block";
-}
+})
 
 //saves new user with submission button
 var newUser = document.getElementsById("user_submission");

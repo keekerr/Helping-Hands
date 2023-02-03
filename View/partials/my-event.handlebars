@@ -1,14 +1,15 @@
 <section class = "eventcard"> 
-    <header class="pg_topper"> my events:</header>
+    <header class="pg_topper"> my events</header>
        
        <div class="my_event_card">  
         <div class="event_header">
-        <p>
-            {{myevent.name}}
-        </p>
+        <p> {{user.event.event_name}} on {{format_date user.event.event_date}} </p>
     </div>
     <div class="event_description">
-        <p> {{myevent.description}} </p>
+        <p> {{user.event.event_description}} </p>
+    </div>
+    <div class="attendingVolunteers">
+        <p> there are BLANK volunteers out of {{user.event.vol_num}} requested </p>
     </div>
         </div>
 
