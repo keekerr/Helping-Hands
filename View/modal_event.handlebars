@@ -1,0 +1,41 @@
+<div id="eventModal" class="eventmodal">
+  <div class="modal-content">
+    <span class="eventclose">&times;</span>
+    
+
+<form>
+
+  <label for="event_name">event name</label><br>
+  <input type="text" id="event_name" name="event_name"><br>
+  
+  <label for="event_date">event date</label><br>
+  <input type="date" id="event_date" name="event_date">
+  
+  <div class="dropdown">
+  <label for="event_type">event type</label><br>
+  <select name="event_type" id="event_type">
+    <option value="childcare">childcare</option>
+    <option value="emotional_support">emotional support</option>
+    <option value="housework">housework</option>
+    <option value="other">other</option>
+  </select>
+  </div>
+
+  <label for="volnum">number of volunteers</label><br>
+  <input type="number" id="volnum" name="volnum">
+
+    <label for="state">state</label><br>
+  <input type="text" id="state" name="state">
+
+  <label for="eventzip">zipcode</label><br>
+  <input type="number" id="eventzip" name="eventzip">
+
+ <label for="event_description">event description</label><br>
+  <input type="text" id="event_description" name="event_description">
+
+<a href="./dashboard.handlebars"><button type="submit" id="event_submission" onclick="createEvent(event)" class="eventsubmit">create event</button></a>
+  
+</form>
+
+ </div>
+</div>
