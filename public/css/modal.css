@@ -1,6 +1,14 @@
+:root {
+--modal_background: linear-gradient(to bottom right, rgb(206, 169, 105), rgb(239, 223, 198) );
+--modal_font_color: rgba(230, 239, 240, 0.95);
+--modal_input_background:rgba(230, 227, 221, 0.95);
+--modal_input_font: rgba(52, 90, 94, 0.95);
+--modal_input_shadow: 0 0 3px 3px rgba(128, 172, 181, 0.95);
+}
+
 .acctmodal , .eventmodal {
     font-family: 'Open Sans', sans-serif;
-    /*display: none;*/
+    display: none;
     position: fixed; 
     z-index: 1; 
     left: 50%;
@@ -11,9 +19,9 @@
     overflow: auto; /*for scrolling*/
     border-radius: 5%;
     text-align: center;
-    background-image: linear-gradient(to bottom right, rgb(206, 169, 105), rgb(239, 223, 198) );
+    background-image: var(--modal_background);
     box-shadow: 0 0 15px 4px rgba(142, 215, 230, 0.95);
-    color:rgba(230, 239, 240, 0.95);
+    color:var(--modal_font_color);
     font-weight: 700;
   
 }
@@ -27,12 +35,12 @@
   .inputfields {
     font-family: 'Open Sans' , sans-serif;
     font-size: small;
-    background-color: rgba(230, 227, 221, 0.95);
+    background-color:var(--modal_input_background);
     padding-left: 7px;
     margin: 10px;
     border: 0;
-    box-shadow: 0 0 3px 3px rgba(128, 172, 181, 0.95);
-    color:rgba(52, 90, 94, 0.95);
+    box-shadow: 0 0 3px 3px var(--modal_input_shadow);
+    color:var(--modal_input_font);
     border-radius: 3px;
     font-weight: 800;
 
@@ -43,14 +51,14 @@
   }
 
   .submissionBtn , .eventsubmit {
-    background-color:rgba(142, 215, 230, 0.95);
+    background-color:var(--modal_input_shadow);
     border: none;
     padding-left: 10%;
     padding-right: 10%;
     margin: 2%;
     border-radius: 3px;
     font-weight: 700;
-    color: rgba(230, 239, 240, 0.95) ;
+    color: var(--modal_font_color) ;
     letter-spacing: 3px;
   }
 

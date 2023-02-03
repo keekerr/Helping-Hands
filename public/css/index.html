@@ -13,40 +13,51 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poor+Story&family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/eventstyle.css"> 
 </head>
-<body id="page-top">
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-  <div class="container">
-      
-      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars ms-1"></i>
-      </button> -->
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-              <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Dashboard">Dashboard</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Login">Login</a></li>
-          </ul>
-      </div>
+
+
+
+<div class="event_card card-style-1">
+  <div class="event_header">
+    {{event.event_name}}
   </div>
-
-  <label for="volnum">number of volunteers</label>
-  <input class="inputfields" type="number" id="volnum" name="volnum"><br>
-
-    <label for="state">state</label>
-  <input class="inputfields" type="text" id="state" name="state"><br>
-
-  <label for="eventzip">zipcode</label>
-  <input class="inputfields" type="number" id="eventzip" name="eventzip"><br>
-
- <label for="event_description">event description</label>
-  <input class="inputfields" type="text" id="event_description" name="event_description"><br>
-
-<a href="./dashboard.handlebars"><button class="submissionBtn" type="submit" id="event_submission" onclick="createEvent(event)" class="eventsubmit">create event</button></a>
-  
-</form>
-
- </div>
+  <div class="">
+    <h5 class="event_type">{{event.event_type}}</h5>
+    <p class=""> event posted by {{event.user.first_name}} {{event.user.last_name}}</p>
+    <p class="">{{event.user.first_name}} needs {{event.vol_num}} volunteers!</p>
+    <p class="">this is event is near {{event.event_zip}} {{event.event_state}}</p>
+    <p class="event_date"> {{event.event_date}}</p>
+    <a href="#" class="volunteer_btn">give a hand!</a>
+  </div>
 </div>
+
+<div class="event_card card-style-2">
+  <div class="event_header">
+    {{event.event_name}}
+  </div>
+  <div class="">
+    <h5 class="event_type">{{event.event_type}}</h5>
+    <p class=""> event posted by {{event.user.first_name}} {{event.user.last_name}}</p>
+    <p class="">{{event.user.first_name}} needs {{event.vol_num}} volunteers!</p>
+    <p class="">this is event is near {{event.event_zip}} {{event.event_state}}</p>
+    <p class="event_date"> {{event.event_date}}</p>
+    <a href="#" class="volunteer_btn">give a hand!</a>
+  </div>
+</div>
+
+<div class="event_card card-style-3">
+  <div class="event_header">
+    {{event.event_name}}
+  </div>
+  <div class="">
+    <h5 class="event_type">{{event.event_type}}</h5>
+    <p class=""> event posted by {{event.user.first_name}} {{event.user.last_name}}</p>
+    <p class="">{{event.user.first_name}} needs {{event.vol_num}} volunteers!</p>
+    <p class="">this is event is near {{event.event_zip}} {{event.event_state}}</p>
+    <p class="event_date"> {{event.event_date}}</p>
+    <a href="#" class="volunteer_btn">give a hand!</a>
+  </div>
+</div>
+
 </html>
