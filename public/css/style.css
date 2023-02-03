@@ -1,5 +1,30 @@
 html{
-    background-color: #fffdd0 ;
+  display: flex;
+}
+body {
+background-color: rgb(140, 106, 106);
+}
+.start {
+display: flex;
+}
+h2 {
+  color: rgb(78, 57, 159);
+}
+.form-group{
+  font-weight: bolder;
+  
+}
+#email-login{
+  width: 258px;
+}
+#password-login{
+  width: 229px;
+}
+.img2{
+  display: flex;
+  flex-wrap: wrap;
+height:fit-content;
+width: fit-content;
 }
 .nav {
     display: flex;

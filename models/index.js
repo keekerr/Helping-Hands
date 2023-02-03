@@ -1,28 +1,16 @@
-// empty model to be filled in 
 const User = require('./User');
-const Volunteer = require('.Volunteer');
 const Event = require('./Event');
 
-// Add in the relationships between the table (i.e. one user can have many event but each event only has one user (admin))
-User.hasMany(Event, {
-    foreignKey: 'id',
-    onDelete: 'CASCADE'
+User.belongsToMany(Event, {
+    as:'volunteer', 
+    foreignKey: 'volunteer_id', 
+    through: 'Volunteer'
 });
 
-Event.belongsTo(User, {
-    foreignKey: 'id'
+Event.belongsToMany(User, {
+    as:'volunteered_event', 
+    foreignKey: 'volunteeredEvent_id',
+    through: 'Volunteer'
 });
 
-Volunteer.belongsTo(User, {
-    foreignKey: "id"
-});
-
-Event.hasMany({
-
-});
-
-Volunteer.belongsTo(Event, {
-    foreignKey: "event_id"
-});
-
-module.exports = { User, Event, Volunteer };
+module.exports = { User, Event };
