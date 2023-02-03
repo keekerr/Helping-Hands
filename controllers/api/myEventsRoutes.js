@@ -1,9 +1,11 @@
 // Event routes go here
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Event } = require('../../models');
 
 
 // Create routes that get events by category
+
+// how do I add to a list? PUT request
 
 // Get Route for events
 
@@ -12,7 +14,7 @@ router.get('/', async (req, res) => {
     // Get all  My events          //or findAll?? then filter with where?? 
     const eventData = await Event.findByPK(req.params.user_id, {
       model: Event ,
-      attributes: ['id', 'name', 'category', 'volunteersNeed', 'volunteersSignedUp' ],
+    attributes: { include: ['id', 'name', 'category', 'volunteersNeed', 'volunteersSignedUp' ] },
       order: [['category', 'ASC']],
       // where clause for user_id
       where: {
@@ -26,10 +28,10 @@ router.get('/', async (req, res) => {
     // create 
 
     // Serialize user data so templates can read it
-    const events = eventData.map((event) =>{ 
+    const events = eventData.map((event) => { 
         event.get({ plain: true })
         //TODO: Calculate the percentage and store it in progressPercentage
-        const progressPercentage = event.volunteersNeed / event.volunteersSignedUp * 100
+        const progressPercentage = event.vol_need / event.vol_num * 100
 
         return {...event, progressPercentage }
     });
@@ -45,10 +47,9 @@ router.get('/', async (req, res) => {
 
 // POST route for events
 // Creates a new event
-// incorporate counting logic for progress bar??
 // find out how to route to modal
 // This will post to DB from homepage modal
-router.post('/modal???', async (req, res) => {
+router.post('/add_user', async (req, res) => {
   try {
     const eventData = await Event.create({
       event_id: req.body.event_id,
@@ -68,7 +69,18 @@ router.post('/modal???', async (req, res) => {
 
 //create PUT to update???
 
+// router.put('/select_event', async (reu,res) => {
+//   try {
+//     const updateData = await Event.update({
+//       vol_num: req.body,
 
+//     });
+//         res.status(200).json(updateData);
+
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 
 
 // DELETE route for events
