@@ -9,9 +9,11 @@ const homeRoutes = require('./homeRoutes');
 
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
-// router.use('/api', userRoutes);
+router.use('/api/userRoutes', userRoutes);
 // // FIX
-// router.use('/api', allEventsRoutes);
+router.use('/apiallEventRoutes/', allEventsRoutes);
+ //TODO: Contact jason about the volunteer routes
+
 // router.use('/api', volunteerRoutes);
 
 module.exports = router;

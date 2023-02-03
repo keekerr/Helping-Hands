@@ -1,20 +1,47 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { Event,User } = require('../models');
 const withAuth = require('../utils/auth');
 
-// Prevent non logged in users from viewing the homepage
+// get all events and join with user data
 router.get('/', withAuth, async (req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['name', 'ASC']],
+    const eventData = await Event.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name']
+        }
+      ]
     });
 // serialization step
-    const users = userData.map((parameter) => parameter.get({ plain: true }));
+    const events = eventData.map((main) => main.get({ plain: true }));
 
     res.render('homepage', {
-      users,
+      events,
       // Pass the logged in flag to the template
+      
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//Get individual projects
+router.get("/event/:id", async (req, res) => {
+  try {
+    const eventData = await Event.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    const event = eventData.get({ plain: true });
+
+    res.render("my-event", {
+      ...event,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -22,6 +49,7 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+//Renders the login page
 router.get('/login', (req, res) => {
   // If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {
@@ -29,7 +57,7 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render( 'login' );
 });
 
 module.exports = router;
