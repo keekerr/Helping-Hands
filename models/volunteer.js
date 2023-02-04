@@ -7,6 +7,7 @@ class Volunteer extends Model {}
 Volunteer.init(
     {
     // this is coming from the user ID, Foreign Key?)
+    // User ID AND ID need to be different 
     id:{
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -16,7 +17,10 @@ Volunteer.init(
     // This is coming from the event ID, (Foreign Key?)
     event_id:{
         type: DataTypes.INTEGER,
-        allowNull: false,
+        references: {
+        model: "event",
+        key: "id",
+      },
         //autoIncrement: true, 
     },  
     //Can this be a foreign key? if not date needs to change  
@@ -38,6 +42,13 @@ Volunteer.init(
     //     type: DataTypes.BIT,
     //     // change to an ENUM?
     // },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
 
     //  conditional statement to check if they have volunnteered for that event already
 },    
