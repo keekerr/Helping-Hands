@@ -1,6 +1,6 @@
 // Event routes go here
 const router = require('express').Router();
-const { Event } = require('../../models');
+const { Event, Volunteer, User } = require('../../models');
 
 
 // Create routes that get events by category
@@ -105,6 +105,8 @@ router.post('/add_user', async (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
+
+
 
 module.exports = router;
 
