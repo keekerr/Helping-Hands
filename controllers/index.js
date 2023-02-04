@@ -7,11 +7,12 @@ const volunteerRoutes = require('./api/volunteerRoutes');
 
 const homeRoutes = require('./homeRoutes');
 
+
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 router.use('/api/userRoutes', userRoutes);
 // // FIX
-router.use('/apiallEventRoutes/', allEventsRoutes);
+router.use('/api/allEventRoutes', allEventsRoutes);
  //TODO: Contact jason about the volunteer routes
 
 // router.use('/api', volunteerRoutes);
