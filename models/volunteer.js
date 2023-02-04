@@ -14,7 +14,7 @@ Volunteer.init(
         allowNull: false,
         autoIncrement: true,
     },
-    // This is coming from the event ID, (Foreign Key?)
+      // This is coming from the event ID, (Foreign Key?)
     event_id:{
         type: DataTypes.INTEGER,
         references: {
