@@ -14,7 +14,7 @@ color:white;
  border-radius: 7px;
  padding: 5%;
  width: 600px;
- height: 360px;
+ height: 270px;
  margin:5%;
  font-family: 'open sans' , sans-serif;
  font-weight: 1000;
@@ -27,28 +27,36 @@ color:white;
 
 .event_card:hover {
     width: 650px;
-    height: 380px;
+    height: 290px;
     border: solid white;
     font-size: large;
-    box-shadow: 2px 2px 10px var(--modal_font_color);/* Add a shadow effect */
+    box-shadow: 15px 15px 15px var(--modal_font_color);/* Add a shadow effect */
   }
 
 .event_header {
     display: flex;
     border-bottom: white solid;
     padding-bottom: 3%;
-    font-size: 200%;
+    font-size: 150%;
     
 
+}
+
+.btnflex {
+    display: inline;
+   
 }
 
 .event_type {
     display: flex;
     font-weight: bolder;
-    margin-top: 3%;
+   
     justify-content: flex-end;
+    font-size: 100%;
     
 }
+
+
 
 .event_date {
     display:flex;
@@ -57,10 +65,8 @@ color:white;
 }
 
 .volunteer_btn {
-    border: solid white;
-    padding: 2% 3%;
+   
     border-radius: 5px;
-    background-image: ;
     color: white;
     transition: all 0.5s;
     height: 30px;
@@ -71,17 +77,18 @@ color:white;
  
 .volunteer_btn:hover {
     color: white;
-    border: solid rgb(239, 223, 198);
+   font-size: larger;
     text-decoration-line: none;
-    box-shadow: 5px 5px 10px var(--modal_font_color);
+   
 }
 
 .card-style-1 {
 background-image: url(https://t4.ftcdn.net/jpg/04/07/46/83/360_F_407468317_yxWGLvOIVyXqUrWmlPx0uePUPjkJfWeT.jpg);
+
 } 
 
 .card-style-2 {
-   
+  
     background-image: url(https://cdn.theatlantic.com/thumbor/IIbeiCxuVDtGe0CV05CSLKAyILA=/0x63:1200x738/960x540/media/img/mt/2016/05/philly/original.jpg);
     
 }

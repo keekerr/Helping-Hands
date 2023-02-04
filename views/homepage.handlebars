@@ -1,3 +1,32 @@
+<body class="bgcolor">  
+
+<header class="homepageNav">
+<button type="button" class="event_modal homepage_btn" id="event_modal">need a hand</button>
+<a href="./dashboard.handlebars"><button type="button" id="allEventsBtn" class="all_events homepage_btn">all events</button> </a>
+<a href="./login.handlebars"><button type="button" class="logout_btn homepage_btn">logout</button></a>
+</header>
+
+<div class="flex">
+
+<div class="leftContainer">
+{{#each event as |event|}}
+
+<div class="{{cycle_event_style}}">
+{{>all-event-details}}
+</div>
+
+{{/each}}
+</div>
+
+<div class="rightContainer">
+    <div class="event_card card-style-1">
+     
+</div>
+</div>
+
+</body>
+
+
 <!--enter html-->
 <button type="button" class="logout_btn">logout</button>
 <div id="allEventsContainer">

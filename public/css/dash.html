@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./dashboard.css">
+  <link rel="stylesheet" href="./public/css/modal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poor+Story&family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./eventstyle.css">
+</head>
+
+<body class="bgcolor">  
+
+<header class="homepageNav">
+<button type="button" class="event_modal homepage_btn" id="event_modal">need a hand</button>
+<a href="./homepage.handlebars"><button type="button" id="allEventsBtn" class="all_events homepage_btn">all events</button> </a>
+<a href="./login.handlebars"><button type="button" class="logout_btn homepage_btn">logout</button></a>
+</header>
+
+<div class="flex">
+<div class="leftContainer">
+    <div class="event_card card-style-1">
+     
+            <div class="event_header">{{user.event.event_name} </div>
+            <h5 class="event_type">{{event.event_type}} on {{ format_time event.event_date}}</h5>
+              <p class="event_details"> {{user.event.event_description}}</p>
+              <p class="event_details">there are {{BLANK}} volunteers out of {{user.event.vol_num}} requested </p>
+              <p class="event_details">this is event is at {{user.event.event_address}} {{user.event.event_zip}} {{event.event_state}} </p>
+              <a href="/views/event-details.handlebars"><button type="button" class="dashBtn"> more details! </button></a>
+    </div>
+</div>
+
+<div class="rightContainer">
+
+    <div class="event_card card-style-1">
+     
+        <div class="event_header">{{user.volunteerEvent_id.event.event_name}}</div>
+        <h5 class="event_type">{{user.volunteerEvent_id.event.event_type}} on {{ format_time user.volunteerEvent_id.event.event_date}}</h5>
+          <p class="event_details"> {{user.volunteerEvent_id.event.event_description}}</p>
+          <p class="event_details">{{user.volunteerEvent_id.event.event_address}} {{user.volunteerEvent_id.event.event_state}} {{user.volunteerEvent_id.event.event_zip}}</p>
+          <a href="/views/event-details.handlebars"><button type="button" class="dashBtn"> more details! </button></a>
+    </div>
+      
+
+</div>
+</div>
+
+</body>

@@ -1,19 +1,33 @@
-<!--enter html-->
-<button type="button" class="event_modal" id="event_modal">need a hand</button>
-<button type="button" id="allEventsBtn" class="all_events">all events</button>
-<button type="button" class="logout_btn">logout</button>
+<body class="bgcolor">  
 
+<header class="homepageNav">
+<button type="button" class="event_modal homepage_btn" id="event_modal">need a hand</button>
+<a href="./homepage.handlebars"><button type="button" id="allEventsBtn" class="all_events homepage_btn">all events</button> </a>
+<a href="./login.handlebars"><button type="button" class="logout_btn homepage_btn">logout</button></a>
+</header>
+
+<div class="flex"></div>
+<div class="leftContainer">
 {{#each events as |event|}}
   {{#if (eq event.user_id user.id)}}
     {{> my-event}}
   {{/if}}
 {{/each}}
+</div>
 
+<div class="rightContainer">
 {{#each events as |event|}}
   {{#if (eq event.user.volunteerEvent_id user.volunteerEvent_id)}}
     {{>volevent}}
   {{/if}}
 {{/each}}
+</div>
+</div>
+
+</body>
+
+
+
 
 <!--............MODAL.................-->
 <div id="eventModal" class="eventmodal">
