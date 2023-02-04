@@ -19,34 +19,36 @@ Event.init(
     },
     event_type: {
       type: DataTypes.ENUM,
-      values: ["Yard Work", "Moving", "Animal Care", "Babysitting"],
+      values: ["Moving", "Food Donations", "Baby Sitting", "Fundraising", "Supply Donations"],
       allowNull: false,
+
       validate: {
         // isAlpha: true
         // notContains: " ",
       },
+
     },
     vol_num: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      Validate: {
-        min: 1,
-        max: 12,
-      },
+      // Validate: {
+      //   min: 1,
+      //   max: 12,
+      // },
     },
 
     vol_need: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      Validate: {
-        min: 1,
-        max: 12,
-      },
+      // Validate: {
+      //   min: 1,
+      //   max: 12,
+      // },
     },
     event_address: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {},
+      // validate: {},
     },
     event_state: {
       type: DataTypes.STRING,
@@ -113,10 +115,17 @@ Event.init(
       // validate: {
       //   len: [5, 10],
       // },
+
+
     },
     event_description: {
       type: DataTypes.TEXT,
       allowNull: false,
+
+      // validate: {
+      //   len: 250,
+      // },
+
     },
     event_creation: {
       type: DataTypes.DATE,
@@ -126,6 +135,7 @@ Event.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
+    // Check This
     user_id: {
       type: DataTypes.INTEGER,
       references: {
