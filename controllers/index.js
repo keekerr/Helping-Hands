@@ -14,7 +14,7 @@ router.use('/api/userRoutes', userRoutes);
 // // FIX
 router.use('/api/allEventRoutes', allEventsRoutes);
  //TODO: Contact jason about the volunteer routes
-
+// May not need this route :
 // router.use('/api', volunteerRoutes);
 
 module.exports = router;
