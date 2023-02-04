@@ -69,7 +69,7 @@ router.post('/add_user', async (req, res) => {
 
 //create PUT to update???
 
-// router.put('/select_event', async (reu,res) => {
+// router.put('/select_event', async (req,res) => {
 //   try {
 //     const updateData = await Event.update({
 //       vol_num: req.body,
