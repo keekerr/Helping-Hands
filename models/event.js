@@ -113,7 +113,8 @@ Event.init(
       // validate: {
       //   len: [5, 10],
       // },
-      // remove all alidate if a string
+
+
     },
     event_description: {
       type: DataTypes.TEXT,

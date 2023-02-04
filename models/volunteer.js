@@ -41,6 +41,7 @@ Volunteer.init(
         "Fundraising",
         "Supply Donations",
       ],
+
     },
     volunteer_date: {
       type: DataTypes.DATE,
