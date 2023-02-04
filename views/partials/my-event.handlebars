@@ -1,11 +1,11 @@
  <div class="event_card card-style-3">
      
-            <div class="event_header">{{user.event.event_name}} </div>
-            <h5 class="event_type">{{event.event_type}} on {{ format_time event.event_date}}</h5>
-              <p class="event_details"> {{user.event.event_description}}</p>
-              <p class="event_details">there are {{BLANK}} volunteers out of {{user.event.vol_num}} requested </p>
-              <p class="event_details">this is event is at {{user.event.event_address}} {{user.event.event_zip}} {{event.event_state}} </p>
-              <a href="/views/event-details.handlebars"><button type="button" class="dashBtn"> more details! </button></a>
+            <div id="myeventname" class="event_header">{{user.event.event_name}} </div>
+            <h5 id="myeventtype" class="event_type"> on {{ format_time event.event_date}}</h5>
+              <p id="myeventdescription"class="event_details"> {{user.event.event_description}}</p>
+              <p id="myeventvol" class="event_details">there are {{BLANK}} volunteers out of {{user.event.vol_num}} requested </p>
+              <p class="event_details">this is event is at <div id="myeventadd"> {{user.event.event_address}}  <div id="myeventszip">{{user.event.event_zip}} </div> <div id="myeventstate"> {{event.event_state}} </div></p>
+              <a href="/views/event-details.handlebars"><button type="button" id="moredetails" class="dashBtn"> more details! </button></a>
     </div>
     <!--
         <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
