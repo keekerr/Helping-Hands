@@ -7,7 +7,7 @@
     <p class=""> event posted by {{event.user.first_name}} {{event.user.last_name}}</p>
     <p class="">{{event.user.first_name}} needs {{event.vol_num}} volunteers!</p>
     <p class="">this is event is near {{event.event_zip}} {{event.event_state}}</p>
-    <p class="event_date"> {{event.event_date}}</p>
+    <p class="event_date"> {{ format_time event.event_date}}</p>
     <a href="#" class="volunteer_btn">give a hand!</a>
   </div>
 </div>

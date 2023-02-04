@@ -29,7 +29,7 @@ color:white;
     width: 650px;
     height: 380px;
     border: solid white;
-  
+    font-size: large;
     box-shadow: 2px 2px 10px var(--modal_font_color);/* Add a shadow effect */
   }
 
@@ -70,10 +70,10 @@ color:white;
 }
  
 .volunteer_btn:hover {
-    color: var(--modal_input_font);
+    color: white;
     border: solid rgb(239, 223, 198);
     text-decoration-line: none;
-    box-shadow: 2px 2px 10px var(--modal_font_color);
+    box-shadow: 5px 5px 10px var(--modal_font_color);
 }
 
 .card-style-1 {
@@ -85,7 +85,6 @@ background-image: url(https://t4.ftcdn.net/jpg/04/07/46/83/360_F_407468317_yxWGL
     background-image: url(https://cdn.theatlantic.com/thumbor/IIbeiCxuVDtGe0CV05CSLKAyILA=/0x63:1200x738/960x540/media/img/mt/2016/05/philly/original.jpg);
     
 }
-
 
 .card-style-3 {
     background-image: url(http://media.wbur.org/wp/2021/11/GettyImages-1298868932-1000x667.jpg);
