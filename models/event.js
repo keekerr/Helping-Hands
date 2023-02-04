@@ -22,8 +22,8 @@ Event.init(
       values: ["Yard Work", "Moving", "Animal Care", "Babysitting"],
       allowNull: false,
       validate: {
-        isAlpha: true,
-        notContains: " ",
+        // isAlpha: true
+        // notContains: " ",
       },
     },
     vol_num: {
@@ -108,21 +108,19 @@ Event.init(
     },
 
     event_zip: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [5, 10],
-      },
+      // validate: {
+      //   len: [5, 10],
+      // },
     },
     event_description: {
       type: DataTypes.TEXT,
       allowNull: false,
-      validate: {
-        len: 250,
-      },
     },
     event_creation: {
       type: DataTypes.DATE,
+      
     },
     event_date: {
       type: DataTypes.DATE,
