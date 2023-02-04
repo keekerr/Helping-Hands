@@ -18,10 +18,10 @@ Volunteer.belongsTo(User, {
     foreignKey: "id"
 });
 
-Event.belongsToMany(User, {
-    as:'volunteered_event', 
-    foreignKey: 'volunteeredEvent_id', 
-    through: 'Volunteer'});
+// Event.belongsToMany(User, {
+//     as:'volunteered_event', 
+//     foreignKey: 'Event_id', 
+//     through: 'Volunteer'});
 
 Volunteer.belongsTo(Event, {
     foreignKey: "event_id"
