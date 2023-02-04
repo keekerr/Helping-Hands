@@ -39,6 +39,9 @@ router.get("/details", async (req, res) => {
   }
 });
 
+// Volunteer routes: 
+
+
 // Should we do a GET for single events?? then show modal???
 
 // router.get('/modal???', async (req, res) => {
