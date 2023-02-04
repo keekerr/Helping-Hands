@@ -51,6 +51,13 @@ Volunteer.init(
     //     type: DataTypes.BIT,
     //     // change to an ENUM?
     // },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
 
     //  conditional statement to check if they have volunnteered for that event already
   },
