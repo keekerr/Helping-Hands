@@ -1,10 +1,12 @@
 const router = require("express").Router();
 const { Event } = require("../../models");
 
+
+
 // create routes to all events page
 
 // get all route by sort category
-router.get("/details", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     // Get all events
     const allEventData = await Event.findAll({
