@@ -1,23 +1,9 @@
-<section class="eventcard"> 
-        <div class="vol_event_card">  
-    <header class="pg_topper"> volunteer events:</header> 
-       <div class="event_header">
-        <p>{{user.volunteerEvent_id.event.event_name}} on {{ format_date user.volunteerEvent_id.event.event_date}} is a {{user.volunteerEvent_id.event.event_type}} event</p>
+ <div class="event_card card-style-2">
+     
+        <div id="voleventname" class="event_header">{{user.volunteerEvent_id.event.event_name}}</div>
+        <h5 id="voleventtype" class="event_type">{{user.volunteerEvent_id.event.event_type}} on <div id="voleventdate">{{ format_time user.volunteerEvent_id.event.event_date}}</div> </h5>
+          <p id="voleventdescription" class="event_details"> {{user.volunteerEvent_id.event.event_description}}</p>
+          <p class="event_details"><div id="voleventadd">{{user.volunteerEvent_id.event.event_address}}</div> <div id="voleventstate"> {{user.volunteerEvent_id.event.event_state}}</div> <div id="voleventzip"> {{user.volunteerEvent_id.event.event_zip}} </div></p>
+          <a href="/views/event-details.handlebars"><button type="button" id= "moredetails" class="dashBtn"> more details! </button></a>
     </div>
-    <div class="event_description">
-        <p> {{user.volunteerEvent_id.event.event_description}} </p>
-        <p> {{user.volunteerEvent_id.event.event_address}}, {{user.volunteerEvent_id.event.event_state}} {{user.volunteerEvent_id.event.event_zip}} </p>
-    </div>
-        </div>
-
-    </section>
-
-    <!-- hang to the right side of page 
-        <div class="card text-white MAKE DARK PURPLE mb-3" style="max-width: 18rem;">
-  <div class="card-header">{{volunteerevent.name}}</div>
-  <div class="card-body">
-    <h5 class="card-title">{{user.name}}</h5>
-    <p class="card-text">{{volunteer.description}}</p>
-  </div>
-</div>
--->
+      
