@@ -22,7 +22,7 @@ Event.belongsTo(User, {
     onDelete: 'CASCADE'
 });
 
-User.hasMany(Events, {
+User.hasMany(Event, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });

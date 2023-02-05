@@ -48,11 +48,11 @@ Volunteer.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    volunteer_status:{
-        type: DataTypes.BIT,
-        // change to an ENUM?
-        // If volunteer status = true, get method to display on page
-    },
+    // volunteer_status:{
+    //     type: DataTypes.BIT,
+    //     // change to an ENUM?
+    //     // If volunteer status = true, get method to display on page
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
