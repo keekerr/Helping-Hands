@@ -3,13 +3,17 @@ const { Event,User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all events and join with user data
+
+
+//Homepage Render
+//Filter by category
 router.get('/', async (req, res) => {
   try {
     const eventData = await Event.findAll({
       include: [
         {
           model: User,
-          attributes: ['first_name', 'last_name']
+          attributes: ['first_name', 'last_name', 'event+name', 'description']
         }
       ]
     });
@@ -27,29 +31,55 @@ router.get('/', async (req, res) => {
   }
 });
 
-// //Get individual Events from dashboard
-// // TODO link to individual events from dashboard
-// router.get("/dashboard/event/:id", async (req, res) => {
-//   try {
-//     const eventData = await Event.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ["name"],
-//         },
-//       ],
-//     });
+ //Get individual Events from dashboard
+ // TODO link to individual events from dashboard
 
-//     const event = eventData.get({ plain: true });
+router.get("/dashboard/event/:id", async (req, res) => {
+  try {
+    const eventData = await Event.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["event_name"],
+        },
+      ],
+    });
 
-//     res.render("my-event", {
-//       ...event,
-//       logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    const event = eventData.get({ plain: true });
+
+    res.render("my-event", {
+      ...event,
+      //logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/dashboard', async (req ,res) => {
+try { 
+  // Get user id from the sessionb = req.session.user_id
+  const userData = User.findByPk(req.session.user_id, {
+    include: {
+      // One to many relationship
+      model: 'Event'
+    },
+    include: {
+      // Many to Many
+      model: 'Volunteer',
+      include: {
+        model: "Event"
+      }
+    }
+
+    userData.event... // events created by user in array
+    userData.volunteers.events... //events volunteeredby user
+  }
+
+  )
+}
+
+})
 
 // Write route to homepage
 
