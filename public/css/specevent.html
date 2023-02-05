@@ -26,7 +26,7 @@
 
     <p id="speceventdate" >{{ format_time event.event_date}}</p>
     <p id="speceventdesc" class="desc-detail">{{event.event_description}}</p>
-    <div id="speceventstate"> {{event.event_state}}</div> <div id="speceventzip">{{event.event_zip}} </div> 
+    <span id="speceventstate"> {{event.event_state}}</span>, <span id="speceventzip">{{event.event_zip}} </span> 
     <p id="specvolnum" > we need {{event.volnum}} volunteers!</p>
     <h3 >created by: <div id="speceventusername">{{event.user.first_name}} </div> <div id="speceventuserlname"> {{event.user.last_name}} </div> </h3>
     
