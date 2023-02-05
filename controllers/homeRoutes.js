@@ -58,6 +58,7 @@ router.get("/event/:id", async (req, res) => {
 });
 
 
+
 // DASHBOARD RENDER
 // TODO: Add withauth when login is working
 router.get("/dashboard", async (req, res) => {
@@ -78,6 +79,7 @@ router.get("/dashboard", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 
 //   userData.event... // events created by user in array
