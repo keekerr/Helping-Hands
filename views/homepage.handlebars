@@ -1,4 +1,36 @@
 
+<div class="flex">
+
+<div class="leftContainer">
+{{#each event as |event|}}
+
+<div class="{{cycle_event_style}}">
+{{>all-event-details}}
+</div>
+
+{{/each}}
+</div>
+
+<div class="rightContainer">
+    <div class="event_card card-style-1">
+     
+</div>
+</div>
+
+</body>
+
+
+<!--enter html-->
+<button type="button" class="logout_btn">logout</button>
+<div id="allEventsContainer">
+{{#each event as |event|}}
+<div class="{{cycle_event_style}}">
+{{>all-event-details}}
+</div>
+{{/each}}
+</div>
+</div>
+
 <!-- button with href as path with "home route"
 connected by controller-->
 <button type="button" id="myEventsBtn" class="my_event_btn">
