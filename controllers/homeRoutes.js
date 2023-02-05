@@ -58,7 +58,7 @@ router.get("/dashboard/event/:id", async (req, res) => {
 
 router.get('/dashboard', async (req ,res) => {
 try { 
-  // Get user id from the sessionb = req.session.user_id
+  // Get user id from the session = req.session.user_id
   const userData = User.findByPk(req.session.user_id, {
     include: {
       // One to many relationship
@@ -70,16 +70,14 @@ try {
       include: {
         model: "Event"
       }
-    }
+    }})}})
 
-    userData.event... // events created by user in array
-    userData.volunteers.events... //events volunteeredby user
-  }
+  //   userData.event... // events created by user in array
+  //   userData.volunteers.events... //events volunteeredby user
+  // }
 
-  )
-}
 
-})
+
 
 // Write route to homepage
 
