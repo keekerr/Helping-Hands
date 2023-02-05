@@ -1,6 +1,7 @@
 [
   {
-    "event_name": "Music Near Me",
+    "event_name": "Moving Day!",
+    "id": 1,
     "event_type": "Moving",
     "vol_num": 5,
     "vol_need": 50,
