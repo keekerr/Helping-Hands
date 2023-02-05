@@ -6,7 +6,7 @@ const withAuth = require("../utils/auth");
 
 //Homepage Render
 //Filter by category
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const eventData = await Event.findAll({
       include: [
