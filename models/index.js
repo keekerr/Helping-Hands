@@ -24,8 +24,10 @@ Event.belongsTo(User, {
 });
 
 User.hasMany(Event, {
-  foreignKey: "user_id",
-  onDelete: "CASCADE",
+
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+
 });
 
 // Volunteer.belongsTo(User, {
