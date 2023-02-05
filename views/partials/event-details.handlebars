@@ -1,12 +1,10 @@
-<h1>{{event.event_name}}</h1>
-<h3>{{event.event_type}}</h3>
-<p>{{event.event_description}}</p>
-<p>{{event.event_date}}</p>
-<p>{{event.event_address}} {{event.event_state}} {{event.event_zip}} </p>
-<p>{{event.volnum}}</p>
-<h3>created by: {{event.user.first_name}} {{event.user.last_name}}</h3>
 
-<a href="./dashboard.handlebars"><button class="volunteer_btn" type="button">my
-    events</button></a>
-<a href="./homepage.handlebars"><button class="volunteer_btn" type="button">see
-    all events</button></a>
+<h1 id="speceventname">{{event.event_name}}</h1>
+<h3 id="speceventtype">{{event.event_type}}</h3>
+<p id="speceventdesc">{{event.event_description}}</p>
+<p id="speceventdate">{{ format_time event.event_date}}</p>
+<p>
+    <div id="speceventstate"> {{event.event_state}}</div> <div id="speceventzip">{{event.event_zip}} </div> </p>
+<p id="specvolnum">{{event.volnum}}</p>
+<h3>created by: <div id="speceventusername">{{event.user.first_name}} </div> <div id="speceventuserlname"> {{event.user.last_name}} </div> </h3>
+

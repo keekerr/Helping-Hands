@@ -12,55 +12,47 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poor+Story&family=Quicksand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./eventstyle.css">
-  
+  <link rel="stylesheet" href="./dashboard.css">
   <title>Helping Hands</title>
+  </head>
+
+
+<body class="bgcolor flex">
+
+<header class="homepageNav">
+<button id= "myEventsBtn" class="homepage_btn" type="button">my events</button>
+<button type="button" id="allEventsBtn" class="all_events homepage_btn">all events</button> 
+<button type="button" class="logout_btn homepage_btn">logout</button>
+</header>
+
+    
+        <img id="logo" src="./Hands2.png" alt="helpinghands">
+    
   
-</head>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+       
+      <button type="click" class="main-dash-btn" id="myEventsBtn">welcome back!</button> 
+     {{else}}
+      <button type="click" class="main-login-btn" id="loginPage"> go to login! </button>
 
+        {{/if}}
+  
+    <main id="mainContainer">
+      <!-- Render the sub layout -->
+      {{{ body }}}
+    
+    </main>
+    
+    
+  <footer>
+  </footer>
+ 
+  </body>
 
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="./js/logout.js"></script>
+  {{/if}}
 
-<div class="event_card card-style-1">
-  <div class="event_header">
-    {{event.event_name}}
-  </div>
-  <div class="">
-    <h5 class="event_type">{{event.event_type}}</h5>
-    <p class=""> event posted by {{event.user.first_name}} {{event.user.last_name}}</p>
-    <p class="">{{event.user.first_name}} needs {{event.vol_num}} volunteers!</p>
-    <p class="">this is event is near {{event.event_zip}} {{event.event_state}}</p>
-    <p class="event_date"> {{event.event_date}}</p>
-    <a href="#" class="volunteer_btn">get more deatils!</a>
-  </div>
-</div>
-
-
-
-<div class="event_card card-style-2">
-  <div class="event_header">
-    {{event.event_name}}
-  </div>
-  <div class="">
-    <h5 class="event_type">{{event.event_type}}</h5>
-    <p class=""> event posted by {{event.user.first_name}} {{event.user.last_name}}</p>
-    <p class="">{{event.user.first_name}} needs {{event.vol_num}} volunteers!</p>
-    <p class="">this is event is near {{event.event_zip}} {{event.event_state}}</p>
-    <p class="event_date"> {{event.event_date}}</p>
-    <a href="#" class="volunteer_btn">give a hand!</a>
-  </div>
-</div>
-
-<div class="event_card card-style-3">
-  <div class="event_header">
-    {{event.event_name}}
-  </div>
-  <div class="">
-    <h5 class="event_type">{{event.event_type}}</h5>
-    <p class=""> event posted by {{event.user.first_name}} {{event.user.last_name}}</p>
-    <p class="">{{event.user.first_name}} needs {{event.vol_num}} volunteers!</p>
-    <p class="">this is event is near {{event.event_zip}} {{event.event_state}}</p>
-    <p class="event_date"> {{event.event_date}}</p>
-    <a href="#" class="volunteer_btn">give a hand!</a>
-  </div>
-</div>
-
-</html>
+<script src="./js/login.js"></script>
