@@ -23,15 +23,13 @@
 <button type="button" id="allEventsBtn" class="all_events homepage_btn">all events</button> 
 <button href= "/users/logout" type="button" class="logout_btn homepage_btn">logout</button>
 </header>
-      <h1 class="main-header">
-        helping hands
-      </h1>
+
   
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
       <button type="click" class="homepage_btn" id="myEventsBtn">welcome back!</button> 
      {{else}}
-      <button type="click" class="homepage_btn" id="loginPage"> go to login! </button>
+      {{!-- <button type="click" class="homepage_btn" id="loginPage"> go to login! </button> --}}
         {{/if}}
   
     <main id="mainContainer">
@@ -47,10 +45,7 @@
   </body>
 
   <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="./js/logout.js"></script>
-  {{/if}}
-
+    <script src="./js/logout.js"></script>
 <script src="./js/login.js"></script>
 </html>
 
@@ -90,7 +85,7 @@
     <p id="specvolnum" > we need {{event.volnum}} volunteers!</p>
     <h3 >created by: <div id="speceventusername">{{event.user.first_name}} </div> <div id="speceventuserlname"> {{event.user.last_name}} </div> </h3>
     
-    <footer class="homepageNav flex">
+    <footer class="homepageNav2 flex">
         <div class="footerPos">
             <button id= "volBtn" class="footerBtn" type="button">give a hand</button>
         <button href="/dashboard" id= "myEventsBtn" class="footerBtn" type="button">my
