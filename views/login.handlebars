@@ -1,29 +1,29 @@
-<div class="row">
-  <img class="img2" src="/public/css/Hands2.png" alt="Hands shaking.">
-      </img>
-    <div class="col-md-9">
-      <h1>Login</h1>
-  
-      <img class="form login-form">
-        <div class="form-group pd-5">
-          <label for="email-login">email</label>
-          <input class="form-input" type="text" id="email-login" placeholder="email@email.com" />
-        </div>
-        <div class="form-group">
-          <label for="password-login">password</label>
-          <input class="form-input" type="password" id="password-login" placeholder="password" />
-        </div>
-        <div class="form-group">
-          <button class="btn btn-danger" id="login" type="submit" onclick="loginFormHandler(event)">login</button>
-        </div>
-        <div>
-          
-        <a href="#"><button type="button" class="createuser" id="userModalBtn">join us!</button></a>
+<form class="fieldplacement">
 
-          
-        </div>
-      </form>
-    </div>
+  <h1 class="modalheader">Welcome back!</h1>
+
+  <label class="label" for="email">email</label>
+  <input class="inputfields" type="text" id="email-login" name="email" /><br />
+
+  <label class="label" for="password">password</label>
+  <input
+    class="inputfields"
+    type="password"
+    id="password-login"
+    name="password"
+  /><br />
+
+  <button
+    class="btn btn-danger"
+    id="login-form"
+    type="submit"
+    onclick="loginFormHandler(event)"
+  >login</button>
+
+  <button type="button" class="createuser" id="userModalBtn">join us!</button>
+ 
+  </form>
+  
   
 <!--...........MODAL......................................................--->
 <div id="acctModal" class="acctmodal">
@@ -54,10 +54,10 @@
   <label class="label" for="password">password</label>
   <input class= "inputfields"type="text" id="password" name="password"><br>
   
-<a href="./dashboard.handlebars"><button type="submit" class="submissionBtn" id="user_submission" onclick="createUser(event)">welcome!</button></a>
+<a href="./dashboard"><button type="submit" class="submissionBtn" id="user_submission" onclick="createUser(event)">welcome!</button></a>
 
 
 </form>
 
- </div>
-</div>
+
+</form>

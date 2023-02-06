@@ -1,19 +1,26 @@
-<!--enter html-->
-<button type="button" class="event_modal" id="event_modal">need a hand</button>
-<button type="button" id="allEventsBtn" class="all_events">all events</button>
-<button type="button" class="logout_btn">logout</button>
 
+<div class="flex"></div>
+<div class="leftContainer">
 {{#each events as |event|}}
   {{#if (eq event.user_id user.id)}}
     {{> my-event}}
   {{/if}}
 {{/each}}
+</div>
 
+<div class="rightContainer">
 {{#each events as |event|}}
   {{#if (eq event.user.volunteerEvent_id user.volunteerEvent_id)}}
     {{>volevent}}
   {{/if}}
 {{/each}}
+</div>
+</div>
+
+</body>
+
+
+
 
 <!--............MODAL.................-->
 <div id="eventModal" class="eventmodal">
@@ -53,7 +60,7 @@
  <label for="event_description">event description</label>
   <input class="inputfields" type="text" id="event_description" name="event_description"><br>
 
-<a href="./dashboard.handlebars"><button class="submissionBtn" type="submit" id="event_submission" onclick="createEvent(event)" class="eventsubmit">create event</button></a>
+<button class="submissionBtn" type="submit" id="event_submission" onclick="createEvent(event)" class="eventsubmit">create event</button> 
   
 </form>
 

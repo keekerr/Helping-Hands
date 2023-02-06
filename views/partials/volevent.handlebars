@@ -1,0 +1,9 @@
+ <div class="event_card card-style-2">
+     
+        <div id="voleventname" class="event_header">{{user.volunteerEvent_id.event.event_name}}</div>
+        <h5 id="voleventtype" class="event_type">{{user.volunteerEvent_id.event.event_type}} on <div id="voleventdate">{{ format_time user.volunteerEvent_id.event.event_date}}</div> </h5>
+          <p id="voleventdescription" class="event_details"> {{user.volunteerEvent_id.event.event_description}}</p>
+          <p class="event_details"><div id="voleventadd">{{user.volunteerEvent_id.event.event_address}}</div> <div id="voleventstate"> {{user.volunteerEvent_id.event.event_state}}</div> <div id="voleventzip"> {{user.volunteerEvent_id.event.event_zip}} </div></p>
+          <a href="/views/event-details.handlebars"><button type="button" id= "moredetails" class="dashBtn"> more details! </button></a>
+    </div>
+      

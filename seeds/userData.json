@@ -1,0 +1,22 @@
+[
+  {
+    
+    "first_name": "Sal",
+    "last_name": "Vatore",
+    "birth_date": "1949/11/29",
+    "email": "sal@hotmail.com",
+    "password": "password12345",
+    "location_state": "AL",
+    "location_zipcode": "08511"
+  },
+  {
+    "first_name": "Ben",
+    "last_name": "Money",
+    "birth_date": "1979/5/22",
+    "email": "ben@email.com",
+    "password": "bestvol",
+    "location_state": "AL",
+    "location_zipcode": "08511"
+  }
+  
+]
