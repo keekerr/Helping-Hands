@@ -4,9 +4,9 @@ var eventModal = document.getElementById("eventModal");
 var eventCloseModal = document.getElementsByClassName("eventclose");
 
 //displays creat event modal
-eventModalBtn.addEventListener("click", function() {
-    eventModal.style.display = "block";
-})
+// eventModalBtn.addEventListener("click", function() {
+    // eventModal.style.display = "block";
+// })
 
 //saves new event with submission button
 var eventSubmission = document.getElementById("event_submission");
@@ -91,6 +91,6 @@ const createUser = async (event) => {
 newUser.onclick = createUser();
 
 //close new user modal 
-userCloseModal.addEventListener("click", function() {
-    userModal.style.display = "none";
-})
+// userCloseModal.addEventListener("click", function() {
+    // userModal.style.display = "none";
+// })
