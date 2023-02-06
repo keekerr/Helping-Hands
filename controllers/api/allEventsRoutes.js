@@ -13,11 +13,12 @@ router.get("/", async (req, res) => {
       model: Event,
       attributes: [
         "id",
-        "name",
-        "description",
-        "category",
-        "volunteersNeed",
-        "volunteersSignedUp",
+        "user_id",
+        "event_name",
+        "event_descritpion",
+        "event_type",
+        "vol_need",
+        "vol_num",
       ],
       order: [["name", "ASC"]],
       // where clause for category
