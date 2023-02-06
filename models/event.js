@@ -134,7 +134,7 @@ Event.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    // Check This
+    // Check This, foreign key for one to many relationship
     user_id: {
       type: DataTypes.INTEGER,
       references: {
