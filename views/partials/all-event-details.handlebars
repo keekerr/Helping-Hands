@@ -1,17 +1,31 @@
-<section>
-  
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">{{event.event_type}}</h5>
-        <p class="card-text"> {{event.event_name}} on {{event.event_date}}
-        <p class="card-text">{{event.event_description}}</p>
-        <p class="card-text">this is event is near {{event.event_zip}} {{event.event_state}} </p>
-        <p class="card-text"> event posted by {{event.user.first_name}} {{event.user.last_name}} </p>
-        <p class="cardtext"> {{event.user.first_name}} needs {{event.vol_num}} volunteers! </p>
-        <a href="#" class="btn btn-primary">give a hand!</a>
+<div class="event_card card-style-1">
+     
+        <div id= "alleventname"class="event_header">{{event.event_name}} </div>
+        <h5 id="alleventtype" class="event_type">{{event.event_type}} on <div id="alleventdate"> {{format_time event.event_date}} </div></h5>
+          <p class="event_details" id="alleventuser"> event posted by {{event.user.first_name}} </p>
+          <p id="alleventvol" class="event_details"> we need {{event.vol_num}} volunteers!</p>
+          <p class="event_details">this is event is near <div id="alleventzip"> {{event.event_zip}}</div>  <div id="alleventstate"> {{event.event_state}}</div></p>
+          <a href="/views/event-details.handlebars" id="moredetails" class="volunteer_btn">get more details!</a>
+</div>
+
+<!--
+      <div class="event_card card-style-2">
+     
+        <div class="event_header">{{event.event_name}} </div>
+        <h5 class="event_type">{{event.event_type}} on {{ format_time event.event_date}}</h5>
+          <p class="event_details"> event posted by {{event.user.first_name}} {{event.user.last_name}}</p>
+          <p class="event_details">{{event.user.first_name}} needs {{event.vol_num}} volunteers!</p>
+          <p class="event_details">this is event is near {{event.event_zip}} {{event.event_state}}</p>
+          <a href="#" class="volunteer_btn">get more details!</a>
       </div>
-    </div>
-</section>
-   
+
+      <div class="event_card card-style-3">
+     
+        <div class="event_header">{{event.event_name}} </div>
+        <h5 class="event_type">{{event.event_type}} on {{ format_time event.event_date}}</h5>
+          <p class="event_details"> event posted by {{event.user.first_name}} {{event.user.last_name}}</p>
+          <p class="event_details">{{event.user.first_name}} needs {{event.vol_num}} volunteers!</p>
+          <p class="event_details">this is event is near {{event.event_zip}} {{event.event_state}}</p>
+          <a href="#" class="volunteer_btn">get more details!</a>
+      </div>
+      -->

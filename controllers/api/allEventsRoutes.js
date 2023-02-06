@@ -1,10 +1,12 @@
 const router = require("express").Router();
 const { Event } = require("../../models");
 
-// create routes to all events page
+
+
+// create routes to all events page That will go to homepage
 
 // get all route by sort category
-router.get("/details", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     // Get all events
     const allEventData = await Event.findAll({
@@ -29,7 +31,7 @@ router.get("/details", async (req, res) => {
       //TODO: Calculate the percentage and store it in progressPercentage
       //const progressPercentage = event.volunteersNeed / event.volunteersSignedUp * 100
 
-      return { ...events, progressPercentage };
+      return { ...events};
     });
 
     // Pass serialized data into Handlebars.js template
@@ -38,6 +40,9 @@ router.get("/details", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Volunteer routes: 
+
 
 // Should we do a GET for single events?? then show modal???
 

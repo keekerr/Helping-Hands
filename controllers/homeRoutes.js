@@ -1,63 +1,125 @@
-const router = require('express').Router();
-const { Event,User } = require('../models');
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const { Event, User } = require("../models");
+const withAuth = require("../utils/auth");
 
 // get all events and join with user data
+
+//HOMEPAGE RENDER
+//Filter by category
 router.get('/', withAuth, async (req, res) => {
+
   try {
     const eventData = await Event.findAll({
       include: [
         {
           model: User,
-          attributes: ['name']
-        }
-      ]
+          attributes: ["first_name"],
+        },
+      ],
     });
-// serialization step
-    const events = eventData.map((main) => main.get({ plain: true }));
+    // serialization step
+    const events = eventData.map((event) => event.get({ plain: true }));
 
-    res.render('homepage', {
+    res.render("homepage", {
       events,
+      logged_in: req.session_logged_in,
       // Pass the logged in flag to the template
-      
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-//Get individual projects
+//This route shows individual event page
+
+// TODO link to individual events from dashboard
+
 router.get("/event/:id", async (req, res) => {
   try {
     const eventData = await Event.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ["name"],
+          attributes: ["event_name"],
         },
       ],
     });
 
     const event = eventData.get({ plain: true });
 
-    res.render("my-event", {
+    res.render("specific-event-details", {
       ...event,
-      logged_in: req.session.logged_in,
+      //logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-//Renders the login page
-router.get('/login', (req, res) => {
-  // If a session exists, redirect the request to the homepage
+// DASHBOARD RENDER
+// TODO: Add withauth when login is working
+router.get("/dashboard", async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Event }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render("dashboard", {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//   userData.event... // events created by user in array
+//   userData.volunteers.events... //events volunteeredby user
+// }
+
+//   userData.event... // events created by user in array
+//   userData.volunteers.events... //events volunteeredby user
+// Write route to homepage
+
+//LOGIN RENDER
+
+router.get("/login", (req, res) => {
+  //If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.redirect("/dashboard");
     return;
   }
 
-  res.render( 'login' );
+  res.render("login");
 });
+
+// router.get('/', {
+//   res.render()
+// })
+
+// router.get('/',
+// // withAuth,
+//  async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
+//       include: [{ model: Event }],
+//     });
+
+//     const user = userData.get({ plain: true });
+
+//     res.render('homepage', {
+//       ...user,
+//       //logged_in: true
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
