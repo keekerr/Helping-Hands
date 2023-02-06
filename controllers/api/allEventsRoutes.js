@@ -8,35 +8,38 @@ const { Event } = require("../../models");
 // get all route by sort category
 router.get("/", async (req, res) => {
   try {
+    console.log("All events!")
     // Get all events
     const allEventData = await Event.findAll({
-      model: Event,
       attributes: [
         "id",
         "user_id",
         "event_name",
-        "event_descritpion",
+        "event_description",
         "event_type",
         "vol_need",
+        "event_date",
         "vol_num",
-      ],
-      order: [["name", "ASC"]],
+     ],
+      // order: [["event_name", "ASC"]],
       // where clause for category
-      where: {
-        category: req.params.category,
-      },
+      
     });
 
+    console.log({allEventData})
+
     const events = allEventData.map((event) => {
-      event.get({ plain: true });
+     return event.get({ plain: true });
       //TODO: Calculate the percentage and store it in progressPercentage
       //const progressPercentage = event.volunteersNeed / event.volunteersSignedUp * 100
 
-      return { ...events};
     });
 
+    console.log({events})
+
     // Pass serialized data into Handlebars.js template
-    res.render("all-event-details", { events });
+    //res.render("all-event-details", { events });
+    res.status(200).json(events)
   } catch (err) {
     res.status(500).json(err);
   }

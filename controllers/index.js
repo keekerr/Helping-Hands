@@ -12,7 +12,7 @@ router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 router.use('/api', userRoutes);
 // // FIX
-router.use('/api', allEventsRoutes);
+//router.use('/api', allEventsRoutes);
  //TODO: Contact jason about the volunteer routes
 // May not need this route :
 // router.use('/api', volunteerRoutes);

@@ -2,22 +2,25 @@
 <div class="flex"></div>
 <div class="leftContainer">
 {{#each events as |event|}}
-  {{#if (eq event.user_id user.id)}}
+{{!-- TODO: Put back eq --}}
+  {{!-- {{#if (eq event.user_id user.id)}} --}}
     {{> my-event}}
-  {{/if}}
+  {{!-- {{/if}} --}}
 {{/each}}
 </div>
 
 <div class="rightContainer">
-{{#each events as |event|}}
-  {{#if (eq event.user.volunteerEvent_id user.volunteerEvent_id)}}
+{{#each user.events as |event|}}
+{{!-- TODO: Put back eq --}}
+
+  {{!-- {{#if (eq event.user.volunteerEvent_id user.volunteerEvent_id)}} --}}
     {{>volevent}}
-  {{/if}}
+  {{!-- {{/if}} --}}
 {{/each}}
 </div>
 </div>
 
-</body>
+
 
 
 
@@ -66,3 +69,4 @@
 
  </div>
 </div>
+<script></script>
