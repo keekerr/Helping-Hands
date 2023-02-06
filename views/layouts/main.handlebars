@@ -24,14 +24,14 @@
 <button type="button" class="logout_btn homepage_btn">logout</button>
 </header>
       <h1 class="main-header">
-        helping hands
+        Helping Hands
       </h1>
   
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
       <button type="click" class="homepage_btn" id="myEventsBtn">welcome back!</button> 
      {{else}}
-      <button type="click" class="homepage_btn" id="loginPage"> go to login! </button>
+      {{!-- <button type="click" class="homepage_btn" id="loginPage"> go to login! </button> --}}
         {{/if}}
   
     <main id="mainContainer">
@@ -47,10 +47,7 @@
   </body>
 
   <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="./js/logout.js"></script>
-  {{/if}}
-
+    <script src="./js/logout.js"></script>
 <script src="./js/login.js"></script>
 </html>
 

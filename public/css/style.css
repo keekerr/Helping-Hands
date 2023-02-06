@@ -3,18 +3,20 @@ html {
 }
 
 body {
+  display: flex;
   background-color: rgb(140, 106, 106);
   height: 100%;
   width: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
-  justify-content: center;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .row {
