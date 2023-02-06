@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,39 +7,30 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/v2.1.3/normalize.css">
   <link rel="stylesheet" href="./jass.css">
-  <link rel="stylesheet" href="./public/css/modal.css">
+  <link rel="stylesheet" href="./style.css">
+  <!-- <link rel="stylesheet" href="./public/css/modal.css"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poor+Story&family=Quicksand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./eventstyle.css">
   <link rel="stylesheet" href="./dashboard.css">
-  <link rel="stylesheet" href="./style.css">
+  
   <title>Helping Hands</title>
-  </head>
+  </head> -->
 
 
-<body class="bgcolor flex">
-
-<header class="homepageNav">
-<button id= "myEventsBtn" class="homepage_btn" type="button">my events</button>
-<button type="button" id="allEventsBtn" class="all_events homepage_btn">all events</button> 
-<button type="button" class="logout_btn homepage_btn">logout</button>
-</header>
+  
+  <header class="homepageNav">
+    <button id= "myEventsBtn" class="homepage_btn" type="button">my events</button>
+    <button type="button" id="allEventsBtn" class="all_events homepage_btn">all events</button> 
+    <button type="button" class="logout_btn homepage_btn">logout</button>
+  </header>
+  <body class="bgcolor flex">
 
     
         <img id="logo" src="./Hands2.png" alt="helpinghands">
     
-          <div class="row">
-            <form>
-                <input id="password" required type="password">
-                <label id="password-label" alt="New password" placeholder="New password" data-info="Very weak"></label>
-              </form>
-              <div class="progress" id="strength-bar" style="visibility: hidden;">
-              
-            </svg>
-              </div>
-        </div>
   
         <-- Conditionally render login or logout links -->
         {{#if logged_in}}
@@ -57,13 +48,7 @@
     </main>
     
     
-  <footer>
-  </footer>
-  <script src="https://cdn.rawgit.com/dropbox/zxcvbn/v1.0/zxcvbn.js"></script>
-        <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.6.1/dist/progressbar.js"></script>
-
-        <script src="../js/bar.js"></script>
-  </body>
+  
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
@@ -104,7 +89,7 @@
       <form actions="/" method="post" role="form" enctype="application/x-www-form-urlencoded">
         <legend>Create an Account!</legend>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="first_name">First Name</label>
           <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">
         </div>
@@ -132,16 +117,27 @@
         <div class="form-group">
           <label for="first_name">Email</label>
           <input type="text" class="form-control" name="email" id="email" placeholder="Email">
-        </div>
+        </div> -->
 
-        <div class="form-group">
-          <label for="first_name">Password</label>
-          <input type="text" class="form-control" name="password" id="password" placeholder="Password">
-        </div>
+        <div class="row">
+          <form>
+            <label for="password">Password</label>
+            <input id="password" required type="password">
+            <div class="progress" id="strength-bar">
+            <label id="password-label" alt="New password" placeholder="New password" data-info="Very weak"></label>
+          </div>
+        </form>
+      </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
 
       </form>
     </div>
   </div>
 </div>
+<script src="https://cdn.rawgit.com/dropbox/zxcvbn/v1.0/zxcvbn.js"></script>
+<script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.6.1/dist/progressbar.js"></script>
+
+<script src="../js/bar.js"></script>
+</body>
+</html>
