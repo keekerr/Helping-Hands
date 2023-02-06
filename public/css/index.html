@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -56,3 +56,77 @@
   {{/if}}
 
 <script src="./js/login.js"></script>
+
+<form class="fieldplacement">
+
+  <h1 class="modalheader">Welcome back!</h1>
+
+  <label class="label" for="email">email</label>
+  <input class="inputfields" type="text" id="email-login" name="email" /><br />
+
+  <label class="label" for="password">password</label>
+  <input
+    class="inputfields"
+    type="password"
+    id="password-login"
+    name="password"
+  /><br />
+
+  <button
+    class="btn btn-danger"
+    id="login-form"
+    type="submit"
+    onclick="loginFormHandler(event)"
+  >login</button>
+
+  <button type="button" class="createuser" id="userModalBtn">join us!</button>
+
+</form> -->
+
+<div class="signup-form">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <form actions="/" method="post" role="form" enctype="application/x-www-form-urlencoded">
+        <legend>Create an Account!</legend>
+
+        <div class="form-group">
+          <label for="first_name">First Name</label>
+          <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">
+        </div>
+
+        <div class="form-group">
+          <label for="first_name">Last Name</label>
+          <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name">
+        </div>
+
+        <div class="form-group">
+          <label for="first_name">Birth Date</label>
+          <input type="text" class="form-control" name="birth_date" id="birth_date" placeholder="Birth Date">
+        </div>
+
+        <div class="form-group">
+          <label for="first_name">State</label>
+          <input type="text" class="form-control" name="state" id="state" placeholder="State">
+        </div>
+
+        <div class="form-group">
+          <label for="first_name">Zip Code</label>
+          <input type="text" class="form-control" name="zipcode" id="zipcode" placeholder="Zip Code">
+        </div>
+
+        <div class="form-group">
+          <label for="first_name">Email</label>
+          <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+        </div>
+
+        <div class="form-group">
+          <label for="first_name">Password</label>
+          <input type="text" class="form-control" name="password" id="password" placeholder="Password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+    </div>
+  </div>
+</div>
