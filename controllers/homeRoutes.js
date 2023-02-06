@@ -6,7 +6,7 @@ const withAuth = require("../utils/auth");
 
 //HOMEPAGE RENDER
 //Filter by category
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
 
   try {
     const eventData = await Event.findAll({
@@ -40,12 +40,16 @@ router.get("/event/:id", async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["event_name"],
+          attributes: {
+            exclude: ['password']
+          }
         },
       ],
     });
 
     const event = eventData.get({ plain: true });
+
+    console.log({event})
 
     res.render("specific-event-details", {
       ...event,
@@ -58,16 +62,16 @@ router.get("/event/:id", async (req, res) => {
 
 // DASHBOARD RENDER
 // TODO: Add withauth when login is working
-router.get("/dashboard", async (req, res) => {
+router.get("/dashboard", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-      include: [{ model: Event }],
+      include: { model: Event },
     });
 
     const user = userData.get({ plain: true });
-
+console.log(user)
     res.render("dashboard", {
       ...user,
       logged_in: true,
