@@ -52,13 +52,13 @@ Volunteer.init(
     //     // change to an ENUM?
     //     // If volunteer status = true, get method to display on page
     // },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "user",
+    //     key: "id",
+    //   },
+    // },
 
     //  conditional statement to check if they have volunnteered for that event already
   },

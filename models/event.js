@@ -19,7 +19,13 @@ Event.init(
     },
     event_type: {
       type: DataTypes.ENUM,
-      values: ["Moving", "Food Donations", "Baby Sitting", "Fundraising", "Supply Donations"],
+      values: [
+        "Moving", 
+        "Food Donations", 
+        "Baby Sitting", 
+        "Fundraising", 
+        "Supply Donations"],
+        
       allowNull: false,
       // validate: {
       //   isAlpha: true,
