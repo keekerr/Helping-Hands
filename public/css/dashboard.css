@@ -1,52 +1,48 @@
 .bgcolor {
-    /*background-color: 
+  /*background-color: 
     rgb(181, 161, 125);*/
-    background-image: var(--modal_background);
+  background-image: var(--modal_background);
 }
 .flex {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    margin-top: 50px;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 50px;
 }
 
-.leftContainer , .rightContainer {
- border: solid white;
- background-color: 
- rgb(76, 142, 144);
-max-width: 60%;
-margin-bottom: 10px;
+.leftContainer,
+.rightContainer {
+  border: solid white;
+  background-color: rgb(76, 142, 144);
+  max-width: 60%;
+  margin-bottom: 10px;
 }
 
 .homepageNav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
-
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin-left: 380px;
 }
-
-.homepage_btn{
-    border: solid rgb(76, 142, 144);
-   color:white; 
-    width: 150px;
-    background-color:  rgb(76, 142, 144);
-    border-radius: 5px;
-    margin: 0 5px;
-
-    
+.homepageNav2 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+.homepage_btn {
+  border: solid rgb(76, 142, 144);
+  color: white;
+  width: 150px;
+  background-color: rgb(76, 142, 144);
+  border-radius: 5px;
+  margin: 0 5px;
 }
 
 .dashBtn {
-    border: solid white;
-    color:white;
-     width: 200px;
-     background-color:  rgb(76, 142, 144);
-     border-radius: 5px;
-     margin: 0 5px;
-
+  border: solid white;
+  color: white;
+  width: 200px;
+  background-color: rgb(76, 142, 144);
+  border-radius: 5px;
+  margin: 0 5px;
 }
-
-
-
-
-

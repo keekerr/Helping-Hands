@@ -19,7 +19,13 @@ Event.init(
     },
     event_type: {
       type: DataTypes.ENUM,
-      values: ["Moving", "Food Donations", "Baby Sitting", "Fundraising", "Supply Donations"],
+      values: [
+        "Moving", 
+        "Food Donations", 
+        "Baby Sitting", 
+        "Fundraising", 
+        "Supply Donations"],
+        
       allowNull: false,
       // validate: {
       //   isAlpha: true,
@@ -128,7 +134,7 @@ Event.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    // Check This
+    // Check This, foreign key for one to many relationship
     user_id: {
       type: DataTypes.INTEGER,
       references: {
