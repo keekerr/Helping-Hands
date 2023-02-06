@@ -1,39 +1,38 @@
-const router = require('express').Router();
-const { Event,User } = require('../models');
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const { Event, User } = require("../models");
+const withAuth = require("../utils/auth");
 
 // get all events and join with user data
-
 
 //HOMEPAGE RENDER
 //Filter by category
 router.get('/', withAuth, async (req, res) => {
+
   try {
     const eventData = await Event.findAll({
       include: [
         {
           model: User,
-          attributes: ['first_name', ]
-        }
-      ]
+          attributes: ["first_name"],
+        },
+      ],
     });
-// serialization step
+    // serialization step
     const events = eventData.map((event) => event.get({ plain: true }));
 
-    res.render('homepage', {
+    res.render("homepage", {
       events,
-      logged_in: req.session_logged_in
+      logged_in: req.session_logged_in,
       // Pass the logged in flag to the template
-      
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
- //This route shows individual event page
+//This route shows individual event page
 
- // TODO link to individual events from dashboard
+// TODO link to individual events from dashboard
 
 router.get("/event/:id", async (req, res) => {
   try {
@@ -57,8 +56,6 @@ router.get("/event/:id", async (req, res) => {
   }
 });
 
-
-
 // DASHBOARD RENDER
 // TODO: Add withauth when login is working
 router.get("/dashboard", async (req, res) => {
@@ -80,7 +77,9 @@ router.get("/dashboard", async (req, res) => {
   }
 });
 
-
+//   userData.event... // events created by user in array
+//   userData.volunteers.events... //events volunteeredby user
+// }
 
 //   userData.event... // events created by user in array
 //   userData.volunteers.events... //events volunteeredby user
@@ -88,23 +87,22 @@ router.get("/dashboard", async (req, res) => {
 
 //LOGIN RENDER
 
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   //If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {
-    res.redirect('/dashboard');
+    res.redirect("/dashboard");
     return;
- }
+  }
 
-  res.render( 'login' );
+  res.render("login");
 });
-
 
 // router.get('/', {
 //   res.render()
 // })
 
 // router.get('/',
-// // withAuth, 
+// // withAuth,
 //  async (req, res) => {
 //   try {
 //     // Find the logged in user based on the session ID
@@ -123,6 +121,5 @@ router.get('/login', (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
-
 
 module.exports = router;
