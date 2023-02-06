@@ -1,6 +1,6 @@
 // Check this block of code
-const  { Model, DataTypes } = require('sequelize');
-const sequelize = require ('../config/connection')
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Volunteer extends Model {}
 
@@ -18,17 +18,17 @@ Volunteer.init(
       allowNull: false,
       references: {
         model: "User",
-        key: 'id'
-      }
+        key: "id",
+      },
     },
     // This is coming from the event ID, (Foreign Key?)
     event_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Event',
-        key: 'id'
-      }
+        model: "Event",
+        key: "id",
+      },
       //autoIncrement: true,
     },
     //Can this be a foreign key? if not date needs to change
@@ -41,7 +41,6 @@ Volunteer.init(
         "Fundraising",
         "Supply Donations",
       ],
-
     },
     volunteer_date: {
       type: DataTypes.DATE,
