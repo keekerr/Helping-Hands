@@ -15,8 +15,8 @@ body {
   -ms-flex-pack: center;
   flex-direction: row-reverse;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
 .row {
