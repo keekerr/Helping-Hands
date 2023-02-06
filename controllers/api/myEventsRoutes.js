@@ -3,7 +3,8 @@ const router = require('express').Router();
 const { Event, Volunteer, User } = require('../../models');
 
 
-//These Routes are for creating and deleting events for the user
+//These Routes are for creating and deleting events for the user 
+// They will go to the dashboard
 
 // POST route for events goes to dashboard
 // Creates a new event

@@ -3,7 +3,7 @@ const { Event } = require("../../models");
 
 
 
-// create routes to all events page
+// create routes to all events page That will go to homepage
 
 // get all route by sort category
 router.get("/", async (req, res) => {
@@ -31,7 +31,7 @@ router.get("/", async (req, res) => {
       //TODO: Calculate the percentage and store it in progressPercentage
       //const progressPercentage = event.volunteersNeed / event.volunteersSignedUp * 100
 
-      return { ...events, progressPercentage };
+      return { ...events};
     });
 
     // Pass serialized data into Handlebars.js template

@@ -4,10 +4,12 @@ const { Volunteer } = require('../../models');
 
 
 //  GET route for volunteer events
-    router.get('/', async (req, res) =>
+    // router.get('/', async (req, res) =>{
+
+    // }
     
-    )
+    // );
 // DELETE routes for volunteer events
-router.delete()
+r//outer.delete()
 
 // May not need this page of routes
