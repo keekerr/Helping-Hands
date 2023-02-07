@@ -1,18 +1,17 @@
-// Check this block of code
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class Volunteer extends Model {}
 
-Volunteer.init(
-  {
-    // this is coming from the user ID, Foreign Key?)
+Volunteer.init({
+   
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true,
     },
+
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -21,7 +20,7 @@ Volunteer.init(
         key: "id",
       },
     },
-    // This is coming from the event ID, (Foreign Key?)
+    
     event_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -29,9 +28,8 @@ Volunteer.init(
         model: "Event",
         key: "id",
       },
-      //autoIncrement: true,
     },
-    //Can this be a foreign key? if not date needs to change
+    
     volunteer_type: {
       type: DataTypes.ENUM,
       values: [
@@ -47,20 +45,7 @@ Volunteer.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    // volunteer_status:{
-    //     type: DataTypes.BIT,
-    //     // change to an ENUM?
-    //     // If volunteer status = true, get method to display on page
-    // },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "user",
-    //     key: "id",
-    //   },
-    // },
-
-    //  conditional statement to check if they have volunnteered for that event already
+  
   },
 
   {
