@@ -1,29 +1,29 @@
+<div class="flex mb-4"><!--whole container-->
+  <div class="w-1/2 bg-gradient-to-r from-blue-300 to-yellow-900 flex flex-col items-center"><!--my events contained--> 
 
-<div class="flex"></div>
-<div class="leftContainer">
-{{#each events as |event|}}
-{{!-- TODO: Put back eq --}}
-  {{!-- {{#if (eq event.user_id user.id)}} --}}
+    {{#each events as |event|}}
+            {{!-- TODO: Put back eq --}}
+            {{!-- {{#if (eq event.user_id user.id)}} --}}
     {{> my-event}}
-  {{!-- {{/if}} --}}
-{{/each}}
-</div>
+            {{!-- {{/if}} --}}
+    {{/each}}
 
-<div class="rightContainer">
-{{#each user.events as |event|}}
-{{!-- TODO: Put back eq --}}
+  </div>
 
-  {{!-- {{#if (eq event.user.volunteerEvent_id user.volunteerEvent_id)}} --}}
+<!---->
+
+  <div class="w-1/2 bg-gradient-to-r from-yellow-900 via-blue-200 to-yellow-800 flex flex-col items-center"><!--volunteer event-->
+    {{#each user.events as |event|}}
+            {{!-- TODO: Put back eq --}}
+
+            {{!-- {{#if (eq event.user.volunteerEvent_id user.volunteerEvent_id)}} --}}
     {{>volevent}}
-  {{!-- {{/if}} --}}
-{{/each}}
+            {{!-- {{/if}} --}}
+    {{/each}}
+
+
+  </div>     
 </div>
-</div>
-
-
-
-
-
 
 <!--............MODAL.................-->
 {{!-- <div id="eventModal" class="eventmodal">

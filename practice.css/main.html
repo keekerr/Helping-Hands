@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>helping hands</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/practice.css/practice.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+
+<body class="font-sans text-yellow-900" >
+
+<div> <!--content wrapper-->
+
+<div> <!--nav-->
+<nav class="bg-gradient-to-r from-blue-200">
+    <!-- Brand -->
+    <h1 class="ml-3 text-2xl font-semibold tracking-wide text-yellow-900 inline">
+        <button id="loginPage" class="transition hover:scale-105 hover:no-underline hover:font-bold hover:text-yellow-900 " href="#">helping hands</button>
+    </h1>
+    
+    <ul class="float-right">
+    <li class="text-lg hover:text-xl tracking-wide text-yellow-900 inline hover:font-semibold mr-1.5">
+        <button class="transition hover:scale-110 hover:no-underline hover:text-yellow-900"id="myeventsBtn" href="#"><span>my events</span></button>
+    </li>
+    <li class="text-lg hover:text-xl tracking-wide text-yellow-900 inline hover:font-semibold ml-1.5 mr-1.5">
+        <button class="transition hover:scale-110 hover:no-underline hover:text-yellow-900" id="allEventsBtn" href="#"><span>all events</span></button>
+    </li>
+    <li class="text-lg hover:text-xl tracking-wide text-yellow-900 inline hover:font-semibold ml-1.5 mr-3">
+        <button class="transition hover:scale-110 hover:no-underline hover:text-yellow-900" href= "/users/logout"><span>logout</span></button>
+    </li>
+    </ul>
+
+</nav>
+</div>
+
+<main class="bg-gradient-to-r from-yellow-900 to-blue-300">
+    <div class="display-block ">
+         <!-- Conditionally render login or logout links -->
+         {{#if logged_in}}
+         <div class="p-4">
+         <button class="transition hover:scale-110 outline outline-offset-2 p-4 hover:outline-4 bg-gradient-to-r from-blue-200 rounded-xl object-fill"type="click" id="myEventsBtn">welcome back!</button> 
+        </div>
+        {{else}}
+        <div class="p-4">
+         <button type="click" class=" transition hover:scale-110 outline outline-offset-2 p-4 hover:outline-4 bg-gradient-to-r from-blue-200 rounded-xl hover:" id="loginPage"> go to login! </button>
+        </div>
+           {{/if}}
+     </div>
+    <div>
+        {{{ body }}}
+    </div>
+</main>
+
+<footer>
+</footer>
+</div>
+
+  <!-- Render script for logged in users only -->
+  <script src="./js/logout.js"></script>
+  <script src="./js/login.js"></script>
+ 
+</body>
+</html>
+<!--.................................................................................-->

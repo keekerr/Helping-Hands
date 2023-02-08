@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>helping hands</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/practice.css/practice.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+
+<body>
+<div class="flex mb-4"><!--whole container-->
+<div class="w-1/2 bg-gradient-to-r from-blue-300 to-yellow-900 flex flex-col items-center"><!--my events contained--> 
+    <div class="bg-white max-w-sm rounded overflow-hidden shadow-lg text-yellow-900 m-3">
+        <img class="w-full" src="https://d2rd7etdn93tqb.cloudfront.net/wp-content/uploads/2020/06/shutterstock-woman-looking-out-over-sunset.jpg" alt="getting help from friends">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2" id= "myeventname">{{event_name}} </div>
+          <p class=" text-base">
+            <span id="myeventtype">your event is a {{event_type}} event on</span><span id="myeventdate">{{format_time event.event_date}}!</span><br>
+            <span id="myeventvol">you need {{event.vol_num}} volunteers!</span><br>
+            <span id="myeventadd">{{event_address}}</span>
+
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span id="alleventuser" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"><a href="/views/event-details" class="hover:no-underline hover:font-bold hover:text-yellow-900" id="moredetails">get more details!</a></span>
+         
+        </div>
+      </div>
+</div>
+
+<!---->
+
+<div class="w-1/2 bg-gradient-to-r from-yellow-900 via-blue-200 to-yellow-800 flex flex-col items-center"><!--volunteer event-->
+        <div class="bg-white max-w-sm rounded overflow-hidden shadow-lg text-yellow-900 m-3">
+            <img class="w-full" src="https://teen.smokefree.gov/sites/default/files/styles/article_image/public/featured_images/quit-with-help.jpg?itok=Mo8w4ttc" alt="getting help">
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2" id= "voleventname">{{user.volunteerEvent_id.event.event_name}} </div>
+              <p class=" text-base">
+                <span id="myeventtype">you volunteered for a {{user.volunteerEvent_id.event.event_type}} event on</span><span id="voleventdate">{{ format_time user.volunteerEvent_id.event.event_date}}!</span><br>
+                <span id="voleventadd">{{user.volunteerEvent_id.event.event_address}}</span>
+    
+              </p>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+              <span id="alleventuser" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"><a href="/views/event-details" class="hover:no-underline hover:font-bold hover:text-yellow-900" id="moredetails">get more details!</a></span>
+             
+            </div>
+          </div>
+       
+        <!---->
+
+        <div class="bg-white max-w-sm rounded overflow-hidden shadow-lg text-yellow-900 m-3">
+            <img class="w-full" src="https://researchautism.org/wp-content/uploads/2022/10/03-section-960x700-Resource.jpg" alt="all hands in">
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2" id= "alleventname">{{event.event_name}} </div>
+              <p class=" text-base">
+                <span id="alleventtype">this event is a {{event.event_type}} event on</span><span id="alleventdate">{{format_time event.event_date}}!</span><br>
+                <span id="alleventvol">we need {{event.vol_num}} volunteers!</span>
+    
+              </p>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+              <span class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">event posted by {{event.user.first_name}}</span>
+              <span id="alleventuser" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"><a href="/views/event-details" class="hover:no-underline hover:text-yellow-900 hover:font-bold" id="moredetails">get more details!</a></span>
+             
+            </div>
+          </div>
+
+    </div>     
+</div>
+
+</body>

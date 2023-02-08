@@ -1,18 +1,16 @@
- <div class="event_card card-style-3">
-     
-            <div id="myeventname" class="event_header">{{event_name}} </div>
-            <h5 id="myeventtype" class="event_type"> on {{ format_time event_date}}</h5>
-              <p id="myeventdescription"class="event_details"> {{event_description}}</p>
-              <p id="myeventvol" class="event_details">there are {{BLANK}} volunteers out of {{vol_num}} requested </p>
-              <p class="event_details">this is event is at <div id="myeventadd"> {{event_address}}  <div id="myeventszip">{{event_zip}} </div> <div id="myeventstate"> {{event_state}} </div></p>
-              <a href="/views/event-details"><button type="button" id="moredetails" class="dashBtn"> more details! </button></a>
-    </div>
-    <!--
-        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-  <div class="card-header">{{myevent.name}}</div>
-  <div class="card-body">
-    <h5 class="card-title">{{user.name}}</h5>
-    <p class="card-text">{{myevent.description}}</p>
-  </div>
-</div>
--->
+    <div class="bg-white max-w-sm rounded overflow-hidden shadow-lg text-yellow-900 m-3">
+        <img class="w-full" src="https://d2rd7etdn93tqb.cloudfront.net/wp-content/uploads/2020/06/shutterstock-woman-looking-out-over-sunset.jpg" alt="getting help from friends">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2" id= "myeventname">{{event_name}} </div>
+          <p class=" text-base">
+            <span id="myeventtype">your event is a {{event_type}} event on</span><span id="myeventdate">{{format_time event.event_date}}!</span><br>
+            <span id="myeventvol">you need {{event.vol_num}} volunteers!</span><br>
+            <span id="myeventadd">{{event_address}}</span>
+
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span id="alleventuser" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"><a href="/views/event-details" class="hover:no-underline hover:font-bold hover:text-yellow-900" id="moredetails">get more details!</a></span>
+         
+        </div>
+      </div>
