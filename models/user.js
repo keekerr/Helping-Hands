@@ -8,32 +8,25 @@ class User extends Model {
   }
 }
 
-User.init(
-  {
+User.init({
+
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    // volunteerEvent_id:{
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    //     // autoIncrement: true,
-    //     primaryKey: true,
-    //},
+    
     first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+
     last_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    birth_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
+    
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -42,6 +35,7 @@ User.init(
         isEmail: true,
       },
     },
+
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -49,91 +43,27 @@ User.init(
         len: [12],
       },
     },
-    location_state: {
-      type: DataTypes.ENUM,
-      values: [
-        "AL",
-        "AK",
-        "AZ",
-        "AR",
-        "CA",
-        "CO",
-        "CT",
-        "DE",
-        "DC",
-        "FL",
-        "GA",
-        "HI",
-        "ID",
-        "IL",
-        "IN",
-        "IA",
-        "KS",
-        "KY",
-        "LA",
-        "ME",
-        "MD",
-        "MA",
-        "MI",
-        "MN",
-        "MS",
-        "MO",
-        "MT",
-        "NE",
-        "NV",
-        "NH",
-        "NJ",
-        "NM",
-        "NY",
-        "NC",
-        "ND",
-        "OH",
-        "OK",
-        "OR",
-        "PA",
-        "RI",
-        "SC",
-        "SD",
-        "TN",
-        "TX",
-        "UT",
-        "VT",
-        "VI",
-        "VA",
-        "WA",
-        "WV",
-        "WI",
-        "WY",
-      ],
-      allowNull: false,
-    },
-    location_zipcode: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    // conditional statement to prevent duplicate user accounts
+  
   },
-
-  {
-    hooks: {
-      beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-      beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(
-          updatedUserData.password,
-          10
-        );
-        return updatedUserData;
-      },
+  {hooks: {
+    beforeCreate: async (newUserData) => {
+      newUserData.password = await bcrypt.hash(newUserData.password, 10);
+      return newUserData;
     },
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: "user",
-  }
-);
+    beforeUpdate: async (updatedUserData) => {
+      updatedUserData.password = await bcrypt.hash(
+        updatedUserData.password,
+        10
+      );
+      return updatedUserData;
+    },
+  },
+  sequelize,
+  timestamps: false,
+  freezeTableName: true,
+  underscored: true,
+  modelName: "user",
+  
+});
 
 module.exports = User;
