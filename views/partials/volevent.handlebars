@@ -1,9 +1,15 @@
- <div class="event_card card-style-2">
-     
-        <div id="voleventname" class="event_header">{{user.volunteerEvent_id.event.event_name}}</div>
-        <h5 id="voleventtype" class="event_type">{{user.volunteerEvent_id.event.event_type}} on <div id="voleventdate">{{ format_time user.volunteerEvent_id.event.event_date}}</div> </h5>
-          <p id="voleventdescription" class="event_details"> {{user.volunteerEvent_id.event.event_description}}</p>
-          <p class="event_details"><div id="voleventadd">{{user.volunteerEvent_id.event.event_address}}</div> <div id="voleventstate"> {{user.volunteerEvent_id.event.event_state}}</div> <div id="voleventzip"> {{user.volunteerEvent_id.event.event_zip}} </div></p>
-          <a href="/views/event-details"><button type="button" id= "moredetails" class="dashBtn"> more details! </button></a>
-    </div>
-      
+        <div class="bg-white max-w-sm rounded overflow-hidden shadow-lg text-yellow-900 m-3">
+            <img class="w-full" src="https://teen.smokefree.gov/sites/default/files/styles/article_image/public/featured_images/quit-with-help.jpg?itok=Mo8w4ttc" alt="getting help">
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2" id= "voleventname">{{user.volunteerEvent_id.event.event_name}} </div>
+              <p class=" text-base">
+                <span id="myeventtype">you volunteered for a {{user.volunteerEvent_id.event.event_type}} event on</span><span id="voleventdate">{{ format_time user.volunteerEvent_id.event.event_date}}!</span><br>
+                <span id="voleventadd">{{user.volunteerEvent_id.event.event_address}}</span>
+    
+              </p>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+              <span id="alleventuser" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"><a href="/views/event-details" class="hover:no-underline hover:font-bold hover:text-yellow-900" id="moredetails">get more details!</a></span>
+             
+            </div>
+          </div>

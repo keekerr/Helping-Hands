@@ -19,10 +19,10 @@ const createEvent = async (event) => {
     const eventType = document.querySelector('#event_type').value.trim();
     const volNum = document.querySelector('#volnum').value.trim();
     const eventState = document.querySelector('#state').value.trim();
-    const eventZip = document.querySelector('#eventzip').value.trim();
+    
     const eventDescription = document.querySelector('#event_description').value.trim();
 
-    if (eventName && eventDate && eventType && volNum && eventState && eventZip && eventDescription) {
+    if (eventName && eventDate && eventType && volNum && eventState && eventDescription) {
         
         const createNewEvent = await fetch ('/api/myEventsRoutes', {
             method: 'POST',
@@ -94,3 +94,8 @@ newUser.onclick = createUser();
 // userCloseModal.addEventListener("click", function() {
     // userModal.style.display = "none";
 // })
+
+
+
+//dropdownmenu button
+

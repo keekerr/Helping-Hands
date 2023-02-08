@@ -1,29 +1,51 @@
+    <div> <!--nav-->
+        <nav class="bg-gradient-to-r from-blue-200 to-yellow-900">
+            <!-- Brand -->
+            <h1 class="ml-3 text-2xl font-semibold tracking-wide text-yellow-900 inline">
+                <button id="loginPage" class="transition hover:scale-105 hover:no-underline hover:font-bold hover:text-yellow-900 " href="#">helping hands</button>
+            </h1>
+            
+            <ul class="float-right">
+            <li class="text-lg hover:text-xl tracking-wide text-blue-200 inline hover:font-semibold mr-1.5">
+                <button class="transition hover:scale-110 hover:no-underline hover:text-blue-200"id="myeventsBtn" href="#"><span>my events</span></button>
+            </li>
+            <li class="text-lg hover:text-xl tracking-wide text-blue-200 inline hover:font-semibold ml-1.5 mr-1.5">
+                <button class="transition hover:scale-110 hover:no-underline hover:text-blue-200" id="allEventsBtn" href="#"><span>all events</span></button>
+            </li>
+            <li class="text-lg hover:text-xl tracking-wide text-blue-200 inline hover:font-semibold ml-1.5 mr-3">
+                <button class="transition hover:scale-110 hover:no-underline hover:text-blue-200" href= "/users/logout"><span>logout</span></button>
+            </li>
+            </ul>
+        
+        </nav>
+        </div>
 
-<div class="flex"></div>
-<div class="leftContainer">
-{{#each events as |event|}}
-{{!-- TODO: Put back eq --}}
-  {{!-- {{#if (eq event.user_id user.id)}} --}}
+<div class="flex mb-4"><!--whole container-->
+  <div class="w-1/2 bg-gradient-to-r from-blue-300 to-yellow-900 flex flex-col items-center"><!--my events contained--> 
+
+    {{#each events as |event|}}
+            {{!-- TODO: Put back eq --}}
+            {{!-- {{#if (eq event.user_id user.id)}} --}}
     {{> my-event}}
-  {{!-- {{/if}} --}}
-{{/each}}
-</div>
+            {{!-- {{/if}} --}}
+    {{/each}}
 
-<div class="rightContainer">
-{{#each user.events as |event|}}
-{{!-- TODO: Put back eq --}}
+  </div>
 
-  {{!-- {{#if (eq event.user.volunteerEvent_id user.volunteerEvent_id)}} --}}
+<!---->
+
+  <div class="w-1/2 bg-gradient-to-r from-yellow-900 via-blue-200 to-yellow-800 flex flex-col items-center"><!--volunteer event-->
+    {{#each user.events as |event|}}
+            {{!-- TODO: Put back eq --}}
+
+            {{!-- {{#if (eq event.user.volunteerEvent_id user.volunteerEvent_id)}} --}}
     {{>volevent}}
-  {{!-- {{/if}} --}}
-{{/each}}
+            {{!-- {{/if}} --}}
+    {{/each}}
+
+
+  </div>     
 </div>
-</div>
-
-
-
-
-
 
 <!--............MODAL.................-->
 {{!-- <div id="eventModal" class="eventmodal">
