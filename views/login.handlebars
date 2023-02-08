@@ -19,17 +19,85 @@
                 login
             </button>
 
-            <p class="text-right"><button id="userModalBtn" class="text-yellow-900 text-sm font-light hover:underline"
-                    href="https://www.kindacode.com">create account</button></p>
+            {{!-- <p class="text-right"><button id="signup-form" type="submit" class="text-yellow-900 text-sm font-light hover:underline"
+                    href="/new-create-account">create account</button></p> --}}
         </form>
     </div>
 
+<div class="w-screen h-screen flex justify-center items-center
+    bg-gradient-to-br from-blue-200 to-amber-700">
+  <form class="p-10 bg-white rounded-xl drop-shadow-lg space-y-5" action="">
+    <h1 class="text-center text-yellow-900 text-3xl">helping hands</h1>
+
+    <div class="flex flex-col space-y-2">
+      <label class="text-sm text-yellow-900" for="fname">first name</label>
+      <input class="w-96 px-3 py-2 rounded-md border border-yellow-900 text-yellow-900" type="text"
+        placeholder="first name" name="fname" id="fname">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label class="text-sm text-yellow-900" for="lname">last name</label>
+      <input class="w-96 px-3 py-2 rounded-md border border-yellow-900 text-yellow-900" type="text"
+        placeholder="last name" name="lname" id="lname">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label class="text-sm text-yellow-900" for="birthday">birthday</label>
+      <input class="w-96 px-3 py-2 rounded-md border border-yellow-900 text-yellow-900" type="date"
+        placeholder="birthday" name="birthday" id="birthday">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label class="text-sm text-yellow-900" for="state">state</label>
+      <input class="w-96 px-3 py-2 rounded-md border border-yellow-900 text-yellow-900" type="text" placeholder="NC"
+        name="state" id="state">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label class="text-sm text-yellow-900" for="userzip">zip code</label>
+      <input class="w-96 px-3 py-2 rounded-md border border-yellow-900 text-yellow-900" type="number"
+        placeholder="zip code" name="userzip" id="userzip">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label class="text-sm text-yellow-900" for="email">email</label>
+      <input class="w-96 px-3 py-2 rounded-md border border-yellow-900 text-yellow-900" type="password"
+        placeholder="email" name="email" id="email">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label class="text-sm text-yellow-900" for="password">password</label>
+      <input class="w-96 px-3 py-2 rounded-md border border-yellow-900 text-yellow-900" type="password"
+        placeholder="your password" name="password" id="password-login">
+    </div>
+
+
+    <button class="w-full px-10 py-2 bg-yellow-900 text-white rounded-md
+            hover:bg-yellow-800 hover:drop-shadow-md duration-300 ease-in" type="submit" id="user_submission"
+      onclick="createUser(event)">
+      create account!
+    </button>
+
+
+  </form>
+</div>
     
 
 
 
 
-          <label for="email-login">email</label>
+
+
+
+
+
+
+
+
+
+
+
+          {{!-- <label for="email-login">email</label>
           <input class="form-input" type="text" id="email-login" placeholder="email@email.com" />
         </div>
         <div class="form-group">
@@ -41,12 +109,12 @@
         </div>
         <div>
           
-        <a href="#"><button type="button" class="createuser btn btn-primary" id="userModalBtn">join us!</button></a>
+        <a href="#"><button type="submit" class="createuser btn btn-primary" id="userModalBtn">join us!</button></a>
 
           
         </div>
   
-  
+   --}}
 <!--...........MODAL......................................................--->
 {{!-- <div id="acctModal" class="acctmodal">
   

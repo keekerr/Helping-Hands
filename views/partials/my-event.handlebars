@@ -3,7 +3,9 @@
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2" id= "myeventname">{{event_name}} </div>
           <p class=" text-base">
-            <span id="myeventtype">your event is a {{event_type}} event on</span><span id="myeventdate">{{format_time event.event_date}}!</span><br>
+            {{!-- TODO: put back format_time --}}
+
+            <span id="myeventtype">your event is a {{event_type}} event on</span><span id="myeventdate">{{ event.event_date}}!</span><br>
             <span id="myeventvol">you need {{event.vol_num}} volunteers!</span><br>
             <span id="myeventadd">{{event_address}}</span>
 
