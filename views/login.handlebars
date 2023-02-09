@@ -51,19 +51,27 @@
     <div class="flex flex-col space-y-2">
       <label class="text-sm text-yellow-900" for="password">password</label>
       <input class="w-96 px-3 py-2 rounded-md border border-yellow-900 text-yellow-900" type="password"
-        placeholder="your password" name="password" id="password-login">
+        placeholder="your password" name="password" id="password">
     </div>
 
 
-    <button class="w-full px-10 py-2 bg-yellow-900 text-white rounded-md
+    {{!-- <button class="w-full px-10 py-2 bg-yellow-900 text-white rounded-md
             hover:bg-yellow-800 hover:drop-shadow-md duration-300 ease-in" type="submit" id="user_submission"
       onclick="createUser(event)">
       create account!
-    </button>
+    </button> --}}
 
+
+<button class="w-full px-10 py-2 bg-yellow-900 text-white rounded-md
+            hover:bg-yellow-800 hover:drop-shadow-md duration-300 ease-in" type="submit" id="signup"
+  onclick="signupFormHandler(event)">
+  create account!
+</button>
 
   </form>
 </div>
+
+
     
 
 
@@ -78,56 +86,3 @@
 
 
 
-
-
-          {{!-- <label for="email-login">email</label>
-          <input class="form-input" type="text" id="email-login" placeholder="email@email.com" />
-        </div>
-        <div class="form-group">
-          <label for="password-login">password</label>
-          <input class="form-input" type="password" id="password-login" placeholder="password" />
-        </div>
-        <div class="form-group">
-          <button class="btn btn-danger" id="login" type="submit" onclick="loginFormHandler(event)">login</button>
-        </div>
-        <div>
-          
-        <a href="#"><button type="submit" class="createuser btn btn-primary" id="userModalBtn">join us!</button></a>
-
-          
-        </div>
-  
-   --}}
-<!--...........MODAL......................................................--->
-{{!-- <div id="acctModal" class="acctmodal">
-  
-    <span class="userclose">&times;</span>
-    
-<form class="fieldplacement">
-  <h1 class="modalheader">Welcome!</h1>
-
-  <label class="label" for="fname">first name</label>
-  <input class="inputfields" type="text" id="fname" name="fname"><br>
-  
-  <label class="label" for="lname">last name</label>
-  <input class="inputfields" type="text" id="lname" name="lname"><br>
-
-  <label class="label" for="birthday">birthday</label>
-  <input class="inputfields" type="date" id="birthday" name="birthday"><br>
-
-  <label class="label" for="state">state</label>
-  <input class="inputfields" type="text" id="state" name="state"><br>
-
-  <label class="label" for="userzip">zipcode</label>
-  <input class="inputfields" type="number" id="userzip" name="userzip"><br>
-
- <label class="label" for="email">email</label>
-  <input class="inputfields"type="text" id="email" name="email"><br>
-
-  <label class="label" for="password">password</label>
-  <input class= "inputfields"type="text" id="password" name="password"><br>
-  
-<a href="./dashboard"><button type="submit" class="submissionBtn" id="user_submission" onclick="createUser(event)">welcome!</button></a>
-
-
-</form> --}}
