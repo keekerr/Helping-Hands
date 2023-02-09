@@ -34,7 +34,7 @@ router.get('/', withAuth, async (req, res) => {
 
 // TODO link to individual events from dashboard
 
-router.get("/event/:id", async (req, res) => {
+router.get("/event/:id", withAuth, async (req, res) => {
   try {
     const eventData = await Event.findByPk(req.params.id, {
       include: [
