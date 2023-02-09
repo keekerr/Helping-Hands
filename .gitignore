@@ -1,3 +1,4 @@
-DB_NAME='helpingHands_db'
-DB_USER='root'@'localhost'
-DB_PASSWORD='LandanKerr20!7'
+node_modules
+.env
+DS_STORE
+
