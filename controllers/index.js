@@ -10,7 +10,7 @@ const homeRoutes = require('./homeRoutes');
 
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
-//router.use('/api', userRoutes);
+router.use('/api', userRoutes);
 // // FIX
 //router.use('/api', allEventsRoutes);
  //TODO: Contact jason about the volunteer routes
