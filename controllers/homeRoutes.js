@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { fstat } = require("fs");
 const { Event, User } = require("../models");
 const withAuth = require("../utils/auth");
 
@@ -123,5 +124,20 @@ router.get("/login", (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
+
+//NEW-EVENT-CREATE RENDER
+router.get("/new-event-create", (req, res) => {
+  //If a session exists, redirect the request to the homepage
+  fstat.readfile(path.join(_dirname, "new-create-event.hbs"), (err, data) => {
+
+    if(err) {
+      return res.status(500).send('something went wrong! try again!');
+    }  
+  res.send(data);
+  });
+
+});
+
+
 
 module.exports = router;
