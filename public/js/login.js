@@ -26,21 +26,20 @@ const loginFormHandler = async (event) => {
   }
 };
 
-const signupFormHandler = async (event) => {
+//var signUpBtn = document.getElementById("signup");
+
+// TODO: ask Andrew
+const signupFormHandler = async (event) => {  
   event.preventDefault();
-
   const fName = document.querySelector("#fname").value.trim();
-  const lName = document.querySelector("#fname").value.trim();
-  const birthday = document.querySelector("#birthday").value.trim();
-  const state = document.querySelector("#state").value.trim();
-  const userZip = document.querySelector("#userzip").value.trim();
+  const lName = document.querySelector("#lname").value.trim();  
   const email = document.querySelector("#email").value.trim();
-  const password = document.querySelector("#passwor").value.trim();
-
-  if (fName && lName && birthday && state && userZip && email && password) {
-    const response = await fetch("/api/users", {
+  const password = document.querySelector("#password").value.trim();
+  
+  if (fName && lName && email && password) {
+    const response = await fetch("/api/", {
       method: "POST",
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ fName, lName, email, password }),
       headers: { "Content-Type": "application/json" },
     });
 
