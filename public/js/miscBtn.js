@@ -15,7 +15,7 @@ const seeAll = async (event) => {
     if (allEventName && allEventDate && allEventType && allEventVolNum  && allEventState && allEventZip && allEventUser) {
         
         const response = await fetch ('/api/allEvents', {
-            method: 'POST',
+            method: 'GET',
             body: JSON.stringify({allEventName,allEventDate,allEventType,allEventVolNum,allEventState,allEventZip,allEventUser}),
             headers: {'All-Events' : 'application/json'},
         });
@@ -59,7 +59,7 @@ const seeMyEvents = async (event) => {
     if (myEventName && myEventDate && myEventType && myEventVolNum  && myEventState && myEventZip && myEventAdd && myEventDescription) {
         
         let response = await fetch ('/api/myEvents', {
-            method: 'POST',
+            method: 'GET',
             body: JSON.stringify({myEventName, myEventDate, myEventType, myEventVolNum, myEventState, myEventZip, myEventAdd, myEventDescription}),
             headers: {'My-Events' : 'application/json'},
         });
@@ -74,7 +74,7 @@ const seeMyEvents = async (event) => {
     if (volEVentName && volEventAdd && volEventDate && volEventDescription && volEventState && volEventType && volEventZip){
         
         let response = await fetch ('/api/allEvents', {
-            method: 'POST',
+            method: 'GET',
             body: JSON.stringify({myEventName, myEventDate, myEventType, myEventVolNum, myEventState, myEventZip, myEventAdd, myEventDescription}),
             headers: {'Volunteer-Events' : 'application/json'},
         });
@@ -113,7 +113,7 @@ const moreDetails = async (event) => {
     if (specEventDate && specEventDesc && specEventName && specEventState && specEventType && specEventUserFname && specEventUserLname && specEventVolNum && specEventZip) {
         
         const response = await fetch ('/api/allEvents', {
-            method: 'POST',
+            method: 'GET',
             body: JSON.stringify({specEventDate, specEventDesc, specEventName, specEventState, specEventType, specEventUserFname, specEventUserLname,  specEventVolNum, specEventZip}),
             headers: {'Event-Details' : 'application/json'},
         });
@@ -152,3 +152,6 @@ document
 document
     .querySelector('loginPage')
     .addEventListener('click',loginPage);
+
+
+

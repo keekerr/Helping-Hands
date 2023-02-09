@@ -1,31 +1,16 @@
-<div class="event_card card-style-1">
-     
-        <div id= "alleventname"class="event_header">{{event.event_name}} </div>
-        <h5 id="alleventtype" class="event_type">{{event.event_type}} on <div id="alleventdate"> {{format_time event.event_date}} </div></h5>
-          <p class="event_details" id="alleventuser"> event posted by {{event.user.first_name}} </p>
-          <p id="alleventvol" class="event_details"> we need {{event.vol_num}} volunteers!</p>
-          <p class="event_details">this is event is near <div id="alleventzip"> {{event.event_zip}}</div>  <div id="alleventstate"> {{event.event_state}}</div></p>
-          <a href="/views/event-details" id="moredetails" class="volunteer_btn">get more details!</a>
-</div>
-
-<!--
-      <div class="event_card card-style-2">
-     
-        <div class="event_header">{{event.event_name}} </div>
-        <h5 class="event_type">{{event.event_type}} on {{ format_time event.event_date}}</h5>
-          <p class="event_details"> event posted by {{event.user.first_name}} {{event.user.last_name}}</p>
-          <p class="event_details">{{event.user.first_name}} needs {{event.vol_num}} volunteers!</p>
-          <p class="event_details">this is event is near {{event.event_zip}} {{event.event_state}}</p>
-          <a href="#" class="volunteer_btn">get more details!</a>
-      </div>
-
-      <div class="event_card card-style-3">
-     
-        <div class="event_header">{{event.event_name}} </div>
-        <h5 class="event_type">{{event.event_type}} on {{ format_time event.event_date}}</h5>
-          <p class="event_details"> event posted by {{event.user.first_name}} {{event.user.last_name}}</p>
-          <p class="event_details">{{event.user.first_name}} needs {{event.vol_num}} volunteers!</p>
-          <p class="event_details">this is event is near {{event.event_zip}} {{event.event_state}}</p>
-          <a href="#" class="volunteer_btn">get more details!</a>
-      </div>
-      -->
+        <div class="bg-white max-w-sm rounded overflow-hidden shadow-lg text-yellow-900 m-3">
+            <img class="w-full" src="https://researchautism.org/wp-content/uploads/2022/10/03-section-960x700-Resource.jpg" alt="all hands in">
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2" id= "alleventname">{{event.event_name}} </div>
+              <p class=" text-base">
+                <span id="alleventtype">this event is a {{event.event_type}} event on</span><span id="alleventdate">{{ event.event_date}}!</span><br>
+                <span id="alleventvol">we need {{event.vol_num}} volunteers!</span>
+    
+              </p>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+              <span class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">event posted by {{event.user.first_name}}</span>
+              <span id="alleventuser" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"><a href="/views/event-details" class="hover:no-underline hover:text-yellow-900 hover:font-bold" id="moredetails">get more details!</a></span>
+             
+            </div>
+          </div>

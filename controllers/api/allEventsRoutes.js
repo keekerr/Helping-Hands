@@ -7,11 +7,16 @@ const { Event } = require("../../models");
 
 // get all route by sort category
 router.get("/", async (req, res) => {
+
+
   try {
     console.log("All events!")
+
+
     // Get all events
     const allEventData = await Event.findAll({
       attributes: [
+
         "id",
         "user_id",
         "event_name",
@@ -20,7 +25,8 @@ router.get("/", async (req, res) => {
         "vol_need",
         "event_date",
         "vol_num",
-     ],
+
+    ],
       // order: [["event_name", "ASC"]],
       // where clause for category
       
@@ -29,9 +35,8 @@ router.get("/", async (req, res) => {
     console.log({allEventData})
 
     const events = allEventData.map((event) => {
-     return event.get({ plain: true });
-      //TODO: Calculate the percentage and store it in progressPercentage
-      //const progressPercentage = event.volunteersNeed / event.volunteersSignedUp * 100
+    return event.get({ plain: true });
+      
 
     });
 
@@ -44,6 +49,40 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Volunteer routes: 
 

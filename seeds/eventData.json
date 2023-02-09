@@ -1,15 +1,11 @@
 [
   {
-    "event_name": "Moving Day!",
     "id": 1,
+    "event_name": "Moving Day!",
     "event_type": "Moving",
-    "vol_num": 5,
     "vol_need": 50,
-    "event_address": "123 street ave ",
-    "event_state": "AL",
-    "event_zip": "08511",
+    "event_address": "123 street ave. Townsville, PA 23232 ",
     "event_description": "a volunteer event",
-    "event_creation": "11/25/2023",
     "event_date": "11/26/2023",
     "user_id": 1
 

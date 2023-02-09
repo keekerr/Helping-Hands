@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>helping hands</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/practice.css/practice.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+
+<body class="font-sans text-yellow-900" >
+
+<div> <!--content wrapper-->
+
+<div> <!--nav-->
+<nav class="bg-gradient-to-r from-blue-200 to-yellow-900">
+    <!-- Brand -->
+    <h1 class="ml-3 text-2xl font-semibold tracking-wide text-yellow-900 inline">
+        <button id="loginPage" class="transition hover:scale-105 hover:no-underline hover:font-bold hover:text-yellow-900 " href="#">helping hands</button>
+    </h1>
+    
+    <ul class="float-right">
+    <li class="text-lg hover:text-xl tracking-wide text-blue-200 inline hover:font-semibold mr-1.5">
+        <button class="transition hover:scale-110 hover:no-underline hover:text-blue-200"id="myeventsBtn" href="#"><span>my events</span></button>
+    </li>
+    <li class="text-lg hover:text-xl tracking-wide text-blue-200 inline hover:font-semibold ml-1.5 mr-1.5">
+        <button class="transition hover:scale-110 hover:no-underline hover:text-blue-200" id="allEventsBtn" href="#"><span>all events</span></button>
+    </li>
+    <li class="text-lg hover:text-xl tracking-wide text-blue-200 inline hover:font-semibold ml-1.5 mr-3">
+        <button class="transition hover:scale-110 hover:no-underline hover:text-blue-200" href= "/users/logout"><span>logout</span></button>
+    </li>
+    </ul>
+
+</nav>
+</div>
+
+
+
+<main class="bg-yellow-900">
+    <div class="flex flex-col items-center">
+         <!-- Conditionally render login or logout links -->
+         {{#if logged_in}}
+       
+        <button class="border-4 border-blue-100 px-10 py-4 text-xl font-semibold text-center text-white transition duration-300 rounded-xl hover:from-blue-200 hover:to-amber-700 ease bg-gradient-to-br from-blue-300 to-amber-700 md:w-auto"
+        id="myEventsBtn" type="click">
+            welcome back!
+        </button>
+
+        {{else}}
+        <button class="border-4 border-blue-100 px-10 py-4 text-xl font-semibold text-center text-white transition duration-300 rounded-xl hover:from-blue-200 hover:to-amber-700 ease bg-gradient-to-br from-blue-300 to-amber-700 md:w-auto"
+        id="loginPage" type="click">
+            go to login!
+        </button>
+        {{/if}}
+     </div>
+    <div>
+        {{{ body }}}
+    </div>
+</main>
+
+<footer>
+</footer>
+</div>
+
+  <!-- Render script for logged in users only -->
+  <script src="./js/logout.js"></script>
+  <script src="./js/login.js"></script>
+ 
+</body>
+</html>
+<!--.................................................................................-->
