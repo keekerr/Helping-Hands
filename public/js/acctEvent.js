@@ -1,11 +1,19 @@
 //NEW EVENT MODAL
-var eventModalBtn = document.getElementById("event_modal");
 var eventModal = document.getElementById("eventModal");
 var eventCloseModal = document.getElementsByClassName("eventclose");
+var createEventPage =document.getElementById("createEventPageBtn");
 
-//displays creat event modal
-// eventModalBtn.addEventListener("click", function() {
-    // eventModal.style.display = "block";
+//displays create event 
+
+createEventPage.addEventListener("click",async() =>{
+  const response = await fetch ("/new-event-create");
+  const createEventTemplate = await response.text();
+    
+  document.getElementById('mainContainer').innerHTML=createEventTemplate;
+    });
+
+
+
 // })
 
 //saves new event with submission button
@@ -19,7 +27,6 @@ const createEvent = async (event) => {
     const eventType = document.querySelector('#event_type').value.trim();
     const volNum = document.querySelector('#volnum').value.trim();
     const eventState = document.querySelector('#state').value.trim();
-    
     const eventDescription = document.querySelector('#event_description').value.trim();
 
     if (eventName && eventDate && eventType && volNum && eventState && eventDescription) {
