@@ -20,6 +20,8 @@ router.get("/", withAuth, async (req, res) => {
     // serialization step
     const events = eventData.map((event) => event.get({ plain: true }));
 
+    // TODO: supposed to render to all events partial 
+
     res.render("dashboard", { events });
   } catch (err) {
     res.status(500).json(err);
@@ -86,7 +88,32 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
 //   userData.event... // events created by user in array
 //   userData.volunteers.events... //events volunteeredby user
-// Write route to homepage
+// Write route to dashboard
+
+// TODO: See if this will work. Coordinate with Lexi to create cards for this
+
+router.get("/dashboard", withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [
+        { model: Event },
+        { model: Volunteer, where: { user_id: req.session.user_id, 
+          event_id: req.session.event_id } },
+      ],
+    });
+
+    const user = userData.get({ plain: true });
+    console.log(user);
+    res.render("volevent", {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 //LOGIN RENDER
 
