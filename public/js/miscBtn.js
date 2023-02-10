@@ -90,7 +90,7 @@ const seeMyEvents = async (event) => {
 
 
 //more details
-
+/*
 var moreDetailsss = document.getElementById("moredetails");
 
 const allEventDescription = document.querySelector('#alleventdescription').value.trim();
@@ -124,7 +124,7 @@ const moreDetails = async (event) => {
             alert("something went wrong! try again!");
           }
     }
-};
+};*/
 
 const loginPage = async(event) => {
 event.preventDefault();
@@ -145,9 +145,9 @@ document
     .querySelector('myEventsBtn')
     .addEventListener('click', seeMyEvents);
 
-document
+/*document
     .querySelector('moredetails')
-    .addEventListener('click', moreDetails);
+    .addEventListener('click', moreDetails);*/
 
 document
     .querySelector('loginPage')
