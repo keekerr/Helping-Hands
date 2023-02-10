@@ -39,12 +39,14 @@
           <li
             class="text-lg hover:text-xl tracking-wide text-blue-200 inline hover:font-semibold mr-1.5"
           >
+
+          
             <button
               class="transition hover:scale-110 hover:no-underline hover:text-blue-200"
               id="createEventPage"
               href="/api/dashboard"
               type="button"
-            ><span>my events</span></button>
+            ><a href="/dashboard"><span>my events</span></a></button>
           </li>
           <li
             class="text-lg hover:text-xl tracking-wide text-blue-200 inline hover:font-semibold ml-1.5 mr-1.5"
@@ -53,24 +55,27 @@
               class="transition hover:scale-110 hover:no-underline hover:text-blue-200"
               id="allEventsBtn"
               href="#"
+              {{!-- TODO: add a tag --}}
             ><span>all events</span></button>
           </li>
           <li
             class="text-lg hover:text-xl tracking-wide text-blue-200 inline hover:font-semibold ml-1.5 mr-3"
           >
             <button
+            
               type="button"
               class="transition hover:scale-110 hover:no-underline hover:text-blue-200 logout_btn homepage_btn"
               id="createEventPageBtn"
-            ><span>create event</span></button>
+            ><a href="/new-create-event"><span>create events</span></a></button>
           </li>
           <li
             class="text-lg hover:text-xl tracking-wide text-blue-200 inline hover:font-semibold ml-1.5 mr-3"
           >
-            <button
-              type="submit"
+            <button 
+            id="logout"
+             type="button"
               class="transition hover:scale-110 hover:no-underline hover:text-blue-200 logout_btn homepage_btn"
-              onclick="logout()"
+              
             ><span>logout</span></button>
           </li>
         </ul>
@@ -89,7 +94,6 @@
 
     <!-- Render script for logged in users only -->
     <script src="./js/logout.js"></script>
-    <script src="./js/login.js"></script>
 
     {{! <script
       src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js%22%3E"

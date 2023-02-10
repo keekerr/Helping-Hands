@@ -30,22 +30,23 @@ const loginFormHandler = async (event) => {
 
 // TODO: ask Andrew
 const signupFormHandler = async (event) => {  
-  console.log("fName:", fName);
-  console.log("lName:", lName);
-  console.log("email:", email);
-  console.log("password:", password);
+  console.log("Are you working?")
   event.preventDefault();
-  const fName = document.querySelector("#fname").value.trim();
-  const lName = document.querySelector("#lname").value.trim();  
+  const first_name = document.querySelector("#fname").value.trim();
+  const last_name = document.querySelector("#lname").value.trim();  
   const email = document.querySelector("#email").value.trim();
   const password = document.querySelector("#password").value.trim();
-
-
+  
+  console.log("fName:", first_name);
+  console.log("lName:", last_name);
+  console.log("email:", email);
+  console.log("password:", password);
+  
   
   if (email && password) {
     const response = await fetch("/api/users", {
       method: "POST",
-      body: JSON.stringify({ fName, lName, email, password }),
+      body: JSON.stringify({ first_name, last_name, email, password }),
       headers: { "Content-Type": "application/json" },
     });
 
@@ -62,7 +63,7 @@ document
   .addEventListener("submit", loginFormHandler);
 
 document
- // .querySelector("#signup-form")
+  .querySelector("#signup-form")
   .addEventListener("submit", signupFormHandler);
 
   
