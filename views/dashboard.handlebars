@@ -6,7 +6,7 @@
   <div class="w-1/2 bg-gradient-to-r from-blue-300 to-yellow-900 flex flex-col items-center"><!--my events contained--> 
     <h2>welcome to your dashboard!</h2>
 
-    {{#each user as |event|}}
+    {{#each events as |event|}}
             {{!-- TODO: Put back eq --}}
             {{!-- {{#if (eq event.user_id user.id)}} --}}
     {{>my-event}}

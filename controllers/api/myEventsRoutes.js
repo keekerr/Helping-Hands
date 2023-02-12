@@ -1,6 +1,6 @@
 // Event routes go here
 const router = require('express').Router();
-const { Event, Volunteer, User } = require('../../models');
+const { Event } = require('../../models');
 
 
 //These Routes are for creating and deleting events for the user 
@@ -16,11 +16,11 @@ router.post('/', async (req, res) => {
   try {
     const newEvent = await Event.create({
       ...req.body,
+     
       
-      //TODO:comment out line 20 for testing only
       user_id: req.session.user_id,
     });
-
+ console.log(req.body);
     res.status(200).json({newEvent});
   } catch (err) {
     res.status(400).json(err);
@@ -61,7 +61,19 @@ router.delete('/:id', async (req, res) => {
 
 // This is the Volunteered event route
 
+// router.post("/", async (req, res) => {
+//   try {
+//     const newVol = await Volunteer.create({
+//       ...req.body,
 
+//       user_id: req.session.user_id,
+//     });
+
+//     res.status(200).json({ newVol });
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 
 
 

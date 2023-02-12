@@ -11,6 +11,7 @@ router.use('/users', userRoutes);
 router.use('/myEvents', eventRoutes);
 
 // TODO: Uncomment when volunteer route is finished
+
 //router.use('/volunteer', volunteerRoutes);
 
 //router.use('/allEvents', allEventsRoutes);

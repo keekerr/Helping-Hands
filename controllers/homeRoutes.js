@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { fstat } = require("fs");
-const { Event, User } = require("../models");
+const { Event, User, Volunteer } = require("../models");
 const withAuth = require("../utils/auth");
 
 // get all events and join with user data
@@ -62,18 +62,13 @@ router.get("/", withAuth, async (req, res) => {
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await Event.findByPk(req.session.user_id, {
-      
-      include: { model: User,
-      //   where: {
-      //   id: req.params.id,
-        
-      // },
-       },
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Event }],
     });
 
     const user = userData.get({ plain: true });
-    console.log(user);
+
     res.render("dashboard", {
       ...user,
       logged_in: true,
@@ -93,25 +88,25 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
 //   userData.event... // events created by user in array
 //   userData.volunteers.events... //events volunteeredby user
+
+
 // Write route to dashboard
 
-// TODO: See if this will work. Coordinate with Lexi to create cards for this
 
-// router.get("/dashboard", withAuth, async (req, res) => {
+// router.get("/volunteered", withAuth, async (req, res) => {
 //   try {
 //     // Find the logged in user based on the session ID
 //     const userData = await User.findByPk(req.session.user_id, {
 //       attributes: { exclude: ["password"] },
 //       include: [
-//         { model: Event },
-//         { model: Volunteer, where: { user_id: req.session.user_id, 
-//           event_id: req.session.event_id } },
+//         { model: Event, where: { volunteer_id: req.query.volunteer_id } },
+//         { model: Volunteer, where: { user_id: req.session.user_id } },
 //       ],
 //     });
 
 //     const user = userData.get({ plain: true });
 //     console.log(user);
-//     res.render("volevent", {
+//     res.render("volunteered", {
 //       ...user,
 //       logged_in: true,
 //     });
@@ -119,6 +114,34 @@ router.get("/dashboard", withAuth, async (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
+
+
+
+
+// TODO: See if this will work. Coordinate with Lexi to create cards for this
+
+router.get("/volunteered", withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [
+        { model: Event },
+        { model: Volunteer, where: { user_id: req.session.user_id, 
+          event_id: req.session.event_id } },
+      ],
+    });
+
+    const user = userData.get({ plain: true });
+   
+    res.render("volunteered", {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 //CREATE NEW EVENT RENDER

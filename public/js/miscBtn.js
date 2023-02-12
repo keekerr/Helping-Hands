@@ -77,20 +77,20 @@ const seeMyEvents = async (event) => {
       vol_need &&
       //myEventState &&
       event_address &&
-      myEventAdd &&
+      //myEventAdd &&
       event_description
     ) {
       let response = await fetch("/api/myEvents", {
         method: "GET",
         body: JSON.stringify({
-          myEventName,
-          myEventDate,
-          myEventType,
-          myEventVolNum,
-          myEventState,
-          myEventZip,
-          myEventAdd,
-          myEventDescription,
+          event_name,
+          event_date,
+          event_type,
+          vol_need,
+          //myEventState,
+          event_address,
+          // myEventAdd,
+          event_description,
         }),
         headers: { "My-Events": "application/json" },
       });
@@ -102,20 +102,20 @@ const seeMyEvents = async (event) => {
       }
     }
 
-    if (volEVentName && volEventAdd && volEventDate && volEventDescription && volEventState && volEventType && volEventZip){
+    // if (volEVentName && volEventAdd && volEventDate && volEventDescription && volEventState && volEventType && volEventZip){
         
-        let response = await fetch ('/api/allEvents', {
-            method: 'GET',
-            body: JSON.stringify({myEventName, myEventDate, myEventType, myEventVolNum, myEventState, myEventZip, myEventAdd, myEventDescription}),
-            headers: {'Volunteer-Events' : 'application/json'},
-        });
+    //     let response = await fetch ('/api/allEvents', {
+    //         method: 'GET',
+    //         body: JSON.stringify({myEventName, myEventDate, myEventType, myEventVolNum, myEventState, myEventZip, myEventAdd, myEventDescription}),
+    //         headers: {'Volunteer-Events' : 'application/json'},
+    //     });
 
-        if (response.ok) {
-            document.location.replace('/dashboard');
-          } else {
-            alert("couldn't load the events you volunteered for! try again!");
-          }
-    }
+    //     if (response.ok) {
+    //         document.location.replace('/dashboard');
+    //       } else {
+    //         alert("couldn't load the events you volunteered for! try again!");
+    //       }
+    // }
 
 };
 

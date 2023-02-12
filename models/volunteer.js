@@ -30,21 +30,21 @@ Volunteer.init({
       },
     },
     
-    volunteer_type: {
-      type: DataTypes.ENUM,
-      values: [
-        "Moving",
-        "Food Donations",
-        "Baby Sitting",
-        "Fundraising",
-        "Supply Donations",
-      ],
-    },
-    volunteer_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
+    // volunteer_type: {
+    //   type: DataTypes.ENUM,
+    //   values: [
+    //     "Moving",
+    //     "Food Donations",
+    //     "Baby Sitting",
+    //     "Fundraising",
+    //     "Supply Donations",
+    //   ],
+    // },
+    // volunteer_date: {
+    //   type: DataTypes.DATE,
+    //   allowNull: false,
+    //   defaultValue: DataTypes.NOW,
+    // },
   
   },
 

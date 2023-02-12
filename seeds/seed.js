@@ -3,6 +3,7 @@ const { User, Event } = require("../models");
 
 const userData = require("./userData.json");
 const eventData = require("./eventData.json");
+const volData = require("./volData.json");
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -15,6 +16,12 @@ const seedDatabase = async () => {
   for (const event of eventData) {
     await Event.create({
       ...event,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+//TODO: REMOVE if proves unnecessaary
+  for (const vol of volData) {
+    await Volunteer.create({
+      ...vol,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }

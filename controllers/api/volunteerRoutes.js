@@ -10,3 +10,16 @@ const { Volunteer } = require("../../models");
 // router.delete()
 
 // May not need this page of routes
+router.post("/", async (req, res) => {
+  try {
+    const newVol = await Volunteer.create({
+      ...req.body,
+
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json({ newVol });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
