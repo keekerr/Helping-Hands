@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { fstat } = require("fs");
-const { Event, User } = require("../models");
+const { Event, User, Volunteer } = require("../models");
 const withAuth = require("../utils/auth");
 
 // get all events and join with user data
@@ -13,7 +13,7 @@ router.get("/", withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["first_name", "last_name"],
+          attributes: ["first_name", "last_name", ],
         },
       ],
     });
@@ -28,52 +28,19 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-//This route SUPPOSED TO SHOW individual event page
-// MAYBE get back to it
-
-// router.get("/event/:id", withAuth, async (req, res) => {
-//   try {
-//     const eventData = await Event.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: {
-//             exclude: ["password"],
-//           },
-//         },
-//       ],
-//     });
-
-//     const event = eventData.get({ plain: true });
-
-//     console.log({ event });
-
-//     res.render("specific-event-details", {
-//       ...event,
-//       //logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 // DASHBOARD RENDER USER'S EVENTS 
 // TODO: Add withauth when login is working
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await Event.findByPk(req.session.user_id, {
-      
-      include: { model: User,
-      //   where: {
-      //   id: req.params.id,
-        
-      // },
-       },
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Event }],
     });
 
     const user = userData.get({ plain: true });
-    console.log(user);
+
     res.render("dashboard", {
       ...user,
       logged_in: true,
@@ -93,11 +60,64 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
 //   userData.event... // events created by user in array
 //   userData.volunteers.events... //events volunteeredby user
+
+
 // Write route to dashboard
+
+
+// GET route for retrieving all volunteer events for a specific user
+// router.get("/:user_id", async (req, res) => {
+//   try {
+//     //const { user_id } = req.params;
+//     const volunteeredEvents = await Volunteer.findAll({
+//       where: {
+//         //user_id: req.session.user_id,
+//         volunteered: true,
+//       },
+//       include: [
+//         {
+//           model: User,
+//         },
+//         {
+//           model: Event,
+//         },
+//       ],
+//     });
+//     res.render("volunteered", { volunteeredEvents });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).send("Server error");
+//   }
+// });
+
+// router.get("/volunteered", withAuth, async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ["password"] },
+//       include: [
+//         { model: Event, where: { volunteer_id: req.query.volunteer_id } },
+//         { model: Volunteer, where: { user_id: req.session.user_id } },
+//       ],
+//     });
+
+//     const user = userData.get({ plain: true });
+//     console.log(user);
+//     res.render("volunteered", {
+//       ...user,
+//       logged_in: true,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+
+
 
 // TODO: See if this will work. Coordinate with Lexi to create cards for this
 
-// router.get("/dashboard", withAuth, async (req, res) => {
+// router.get("/volunteer", withAuth, async (req, res) => {
 //   try {
 //     // Find the logged in user based on the session ID
 //     const userData = await User.findByPk(req.session.user_id, {
@@ -110,8 +130,8 @@ router.get("/dashboard", withAuth, async (req, res) => {
 //     });
 
 //     const user = userData.get({ plain: true });
-//     console.log(user);
-//     res.render("volevent", {
+   
+//     res.render("volunteered", {
 //       ...user,
 //       logged_in: true,
 //     });

@@ -17,9 +17,10 @@ const seedDatabase = async () => {
       ...event,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
-  }
+    
 
-  process.exit(0);
+    process.exit(0);
+  }
 };
 
 seedDatabase();

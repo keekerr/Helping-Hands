@@ -30,17 +30,14 @@ const loginFormHandler = async (event) => {
 
 // TODO: ask Andrew
 const signupFormHandler = async (event) => {  
-  console.log("Are you working?")
+  
   event.preventDefault();
   const first_name = document.querySelector("#fname").value.trim();
   const last_name = document.querySelector("#lname").value.trim();  
   const email = document.querySelector("#email").value.trim();
   const password = document.querySelector("#password").value.trim();
   
-  console.log("fName:", first_name);
-  console.log("lName:", last_name);
-  console.log("email:", email);
-  console.log("password:", password);
+  
   
   
   if (email && password) {
