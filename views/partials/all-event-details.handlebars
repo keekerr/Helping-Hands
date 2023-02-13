@@ -11,7 +11,17 @@
             </div>
             <div class="px-6 pt-4 pb-2">
               <span class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">event posted by {{first_name}} {{last_name}} </span>
-              <span id="alleventuser" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"><a href="/views/event-details" class="hover:no-underline hover:text-yellow-900 hover:font-bold" id="volunteerBtn">volunteer!</a></span>
-             
+
+              <form>
+              <input type="hidden" id="user_id" name="userId" value="{{user_id}}">
+              <input type="hidden" id="event_id" name="eventId" value="{{event_id}}">
+              <input type="hidden" id="volunteered" name="volunteered" value="true">
+              <span id="alleventuser" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+                <button class="hover:no-underline hover:text-yellow-900 hover:font-bold"  id="volunteerBtn">volunteer!</button></span>
+              
+</form>
             </div>
           </div>
+
+
+<script src="/js/volunteer.js"></script>

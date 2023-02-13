@@ -3,8 +3,8 @@ const sequelize = require("../config/connection");
 
 class Volunteer extends Model {}
 
-Volunteer.init({
-   
+Volunteer.init(
+  {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -20,7 +20,7 @@ Volunteer.init({
         key: "id",
       },
     },
-    
+
     event_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -29,7 +29,11 @@ Volunteer.init({
         key: "id",
       },
     },
-    
+    volunteered: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+
     // volunteer_type: {
     //   type: DataTypes.ENUM,
     //   values: [
@@ -45,7 +49,6 @@ Volunteer.init({
     //   allowNull: false,
     //   defaultValue: DataTypes.NOW,
     // },
-  
   },
 
   {

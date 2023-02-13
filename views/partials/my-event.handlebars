@@ -2,8 +2,9 @@
         <img class="w-full" src="https://d2rd7etdn93tqb.cloudfront.net/wp-content/uploads/2020/06/shutterstock-woman-looking-out-over-sunset.jpg" alt="getting help from friends">
         <div class="px-6 py-4">
 
-          <h2>these are your events</h2>
-          <div class="font-bold text-xl mb-2" id= "myeventname">{{event_name}} posted by: {{first_name}} {{last_name}} </div>
+          
+          <div class="font-bold text-xl mb-2" id= "myeventname">{{event_name}} </div> 
+          {{!-- posted by: {{first_name}} {{last_name}}  --}}
           <p class=" text-base">
             {{!-- TODO: put back format_time --}}
             <span id="myeventtype">your event is a {{event_type}} event on</span><span id="myeventdate">{{format_date event_date}}!</span><br>
@@ -14,7 +15,7 @@
           </p>
         </div>
         <div class="px-6 pt-4 pb-2">
-          <span id="alleventuser" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"><a href="/views/event-details" class="hover:no-underline hover:font-bold hover:text-yellow-900" id="moredetails">get more details!</a></span>
+          {{!-- <span id="alleventuser" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"><a href="/views/event-details" class="hover:no-underline hover:font-bold hover:text-yellow-900" id="moredetails">get more details!</a></span> --}}
          
         </div>
       </div>

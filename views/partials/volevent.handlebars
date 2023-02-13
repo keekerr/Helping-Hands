@@ -3,15 +3,15 @@
               src="https://teen.smokefree.gov/sites/default/files/styles/article_image/public/featured_images/quit-with-help.jpg?itok=Mo8w4ttc"
               alt="giving help">
             <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2" id="voleventname">{{event_name}} posted by: <span
+              <div class="font-bold text-xl mb-2" id="voleventname">{{volunteer.event_name}} posted by: <span
                   id="creator_firstname"> {{first_name}} </span> <span id="creator_lastname">
                   {{last_name}} </span></div>
               <p class=" text-base">
-                <span id="voleventtype">you volunteered for a {{event_type}} event on</span><span
-                  id="voleventdate">{{format_date event_date}}!</span><br>
-                <span id="voleventneed">there are {{vol_need}} needed! </span> <br>
-                <span id="voleventadd">{{event_address}}</span> <br>
-                <span id="voleventdescription"> {{event_description}} </span>
+                <span id="voleventtype">you volunteered for a {{volunteer.event_type}} event on</span><span
+                  id="voleventdate">{{format_date volunteer.event_date}}!</span><br>
+                <span id="voleventneed">there are {{volunteer.vol_need}} needed! </span> <br>
+                <span id="voleventadd">{{volunteer.event_address}}</span> <br>
+                <span id="voleventdescription"> {{volunteer.event_description}} </span>
               </p>
             </div>
           

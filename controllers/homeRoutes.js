@@ -13,7 +13,7 @@ router.get("/", withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["first_name", "last_name"],
+          attributes: ["first_name", "last_name", ],
         },
       ],
     });
@@ -28,34 +28,6 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-//This route SUPPOSED TO SHOW individual event page
-// MAYBE get back to it
-
-// router.get("/event/:id", withAuth, async (req, res) => {
-//   try {
-//     const eventData = await Event.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: {
-//             exclude: ["password"],
-//           },
-//         },
-//       ],
-//     });
-
-//     const event = eventData.get({ plain: true });
-
-//     console.log({ event });
-
-//     res.render("specific-event-details", {
-//       ...event,
-//       //logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 // DASHBOARD RENDER USER'S EVENTS 
 // TODO: Add withauth when login is working
@@ -93,6 +65,31 @@ router.get("/dashboard", withAuth, async (req, res) => {
 // Write route to dashboard
 
 
+// GET route for retrieving all volunteer events for a specific user
+// router.get("/:user_id", async (req, res) => {
+//   try {
+//     //const { user_id } = req.params;
+//     const volunteeredEvents = await Volunteer.findAll({
+//       where: {
+//         //user_id: req.session.user_id,
+//         volunteered: true,
+//       },
+//       include: [
+//         {
+//           model: User,
+//         },
+//         {
+//           model: Event,
+//         },
+//       ],
+//     });
+//     res.render("volunteered", { volunteeredEvents });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).send("Server error");
+//   }
+// });
+
 // router.get("/volunteered", withAuth, async (req, res) => {
 //   try {
 //     // Find the logged in user based on the session ID
@@ -120,28 +117,28 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
 // TODO: See if this will work. Coordinate with Lexi to create cards for this
 
-router.get("/volunteered", withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ["password"] },
-      include: [
-        { model: Event },
-        { model: Volunteer, where: { user_id: req.session.user_id, 
-          event_id: req.session.event_id } },
-      ],
-    });
+// router.get("/volunteer", withAuth, async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ["password"] },
+//       include: [
+//         { model: Event },
+//         { model: Volunteer, where: { user_id: req.session.user_id, 
+//           event_id: req.session.event_id } },
+//       ],
+//     });
 
-    const user = userData.get({ plain: true });
+//     const user = userData.get({ plain: true });
    
-    res.render("volunteered", {
-      ...user,
-      logged_in: true,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render("volunteered", {
+//       ...user,
+//       logged_in: true,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 
 //CREATE NEW EVENT RENDER
