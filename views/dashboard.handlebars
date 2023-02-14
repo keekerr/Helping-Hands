@@ -1,0 +1,29 @@
+    
+
+<div class="flex mb-4"><!--whole container-->
+
+
+  <div class="w-1/2 bg-gradient-to-r from-blue-300 to-yellow-900 flex flex-col items-center"><!--my events contained--> 
+    
+
+    {{#each events as |event|}}
+            
+    {{>my-event}}
+          
+    {{/each}}
+
+  </div>
+
+<!---->
+
+  <div class="w-1/2 bg-gradient-to-r from-yellow-900 via-blue-200 to-yellow-800 flex flex-col items-center"><!--volunteer event-->
+    {{#each events as |event|}}
+            
+    {{>volevent}}
+            
+    {{/each}}
+
+
+  </div>     
+</div>
+

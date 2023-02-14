@@ -1,0 +1,105 @@
+<html lang="en">
+
+  <head>
+    <title>helping hands</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="/src/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Roboto:300,100"
+      rel="stylesheet"
+      type="text/css"
+    />
+    {{! <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js%22%3E"
+    ></script> }}
+    {{! <script src=" https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js%22%3E"</script> }}
+    {{! <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js%22%3E"</script> }}
+    <script src="https://cdn.tailwindcss.com"></script>
+
+  </head>
+
+  <body>
+    <div>
+      <!--nav-->
+      <nav class="bg-gradient-to-r from-blue-200 to-yellow-900">
+        <!-- Brand -->
+        <h1
+          class="ml-3 text-2xl font-semibold tracking-wide text-yellow-900 inline"
+        >
+          <button
+            id="allEventsButton"
+            class="transition hover:scale-105 hover:no-underline hover:font-bold hover:text-yellow-900"
+            href="#"
+          >helping hands</button>
+        </h1>
+
+        <ul class="float-right">
+          <li
+            class="text-lg hover:text-xl tracking-wide text-blue-200 inline hover:font-semibold mr-1.5"
+          >
+
+          
+            <button
+              class="transition hover:scale-110 hover:no-underline hover:text-blue-200"
+              id="createEventPage"
+              href="/api/dashboard"
+              type="button"
+            ><a href="/dashboard"><span>my events</span></a></button>
+          </li>
+          <li
+            class="text-lg hover:text-xl tracking-wide text-blue-200 inline hover:font-semibold ml-1.5 mr-1.5"
+          >
+            <button
+              class="transition hover:scale-110 hover:no-underline hover:text-blue-200"
+              id="allEventsBtn"
+              href="#"
+              {{!-- TODO: add a tag --}}
+            ><a href="/"><span>all events</span></a></button>
+          </li>
+          <li
+            class="text-lg hover:text-xl tracking-wide text-blue-200 inline hover:font-semibold ml-1.5 mr-3"
+          >
+            <button
+            
+              type="button"
+              class="transition hover:scale-110 hover:no-underline hover:text-blue-200 logout_btn homepage_btn"
+              id="createEventPageBtn"
+            ><a href="/new-create-event"><span>create events</span></a></button>
+          </li>
+          <li
+            class="text-lg hover:text-xl tracking-wide text-blue-200 inline hover:font-semibold ml-1.5 mr-3"
+          >
+            <button 
+            id="logout"
+             type="button"
+              class="transition hover:scale-110 hover:no-underline hover:text-blue-200 logout_btn homepage_btn"
+              
+            ><span>logout</span></button>
+          </li>
+        </ul>
+
+      </nav>
+    </div>
+
+    <main id="mainContainer">
+      <!-- Render the sub layout -->
+      {{{body}}}
+
+    </main>
+
+    <footer>
+    </footer>
+
+    <!-- Render script for logged in users only -->
+    <script src="./js/logout.js"></script>
+
+    {{! <script
+      src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js%22%3E"
+    ></script> }}
+  </body>
+
+</html>
+
+<!--.................-->
